@@ -16,4 +16,13 @@
     <Color x:Key="ForegroundLight">#ffffff</Color>
     <SolidColorBrush x:Key="ForegroundLightBrush" Color="{StaticResource ForegroundLight}"/>
 
+    <Color x:Key="ForegroundDark">#bdbdbd</Color>
+    <SolidColorBrush x:Key="ForegroundDarkBrush" Color="{StaticResource ForegroundDark}"/>
+
+    <Color x:Key="Turquoise">#28AA9F</Color>
+    <SolidColorBrush x:Key="TurquoiseBrush" Color="{StaticResource Turquoise}"/>
+
+    <Color x:Key="Beige">#CFBAA7</Color>
+    <SolidColorBrush x:Key="BeigeBrush" Color="{StaticResource Beige}"/>
+
 </ResourceDictionary>

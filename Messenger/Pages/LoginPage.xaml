@@ -1,0 +1,62 @@
+﻿<Page x:Class="Messenger.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Messenger"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1000"
+      Background="Transparent"
+      Title="LoginPage">
+
+    <Border Background="Black" >
+        <Grid>
+            <!-- Background image -->
+            <Grid.Background>
+                <ImageBrush  ImageSource="/Images/Backgrounds/login-background2.jpg"/>
+            </Grid.Background>
+
+            <!-- Maint content scroll-->
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" RenderTransformOrigin="0.497,0.499">
+                <StackPanel 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center"
+                    TextBlock.TextAlignment="Center">
+
+                    <!-- Login main content white brush-->
+                    <Border Background="{StaticResource ForegroundLightBrush}"
+                            CornerRadius="10"
+                            Padding="15 50 15 15"
+                            Width="330"
+                            Margin="50 50 50 0">
+                        <StackPanel>
+
+                            <!-- Sing up header -->
+                            <TextBlock Text="Sing Up" 
+                                   FontFamily="{StaticResource LatoBold}"
+                                   FontSize="30"
+                                   Foreground="{StaticResource TurquoiseBrush}"/>
+                            <!-- Sing up subtext -->
+                            <TextBlock Text="It's about to get fun"
+                                       FontSize="20"
+                                       Foreground="{StaticResource ForegroundDarkBrush}"
+                                       Margin="0 0 0 20"/>
+
+                            <!-- Email -->
+                            <TextBox Tag="Email"/>
+
+                            <!-- Password -->
+                            <TextBox Tag="Password" Margin="0 0 0 20"/>
+
+                            <!-- Next button -->
+                            <Button Content="Next" HorizontalAlignment="Center"/>
+
+                        </StackPanel>
+                    </Border>
+
+                    <Button Style="{StaticResource TextButton}" Content="I already have an account" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</Page>

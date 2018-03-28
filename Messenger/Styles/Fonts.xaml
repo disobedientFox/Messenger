@@ -4,6 +4,7 @@
     <FontFamily x:Key="LatoRegular">pack://appliction;,,,/Fonds/#Lato</FontFamily>
     <FontFamily x:Key="LatoThin">pack://appliction;,,,/Fonds/#Lato Thin</FontFamily>
     <FontFamily x:Key="LatoThinItalic">pack://appliction;,,,/Fonds/#Lato Thin Italic</FontFamily>
+    <FontFamily x:Key="LatoBold">pack://appliction;,,,/Fonds/#Lato Bold</FontFamily>
 
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
         <Setter Property="FontFamily" Value="{StaticResource LatoThin}"/>
