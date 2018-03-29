@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Messenger.Styles">
+                    xmlns:local="clr-namespace:Messenger">
     <FontFamily x:Key="LatoRegular">pack://appliction;,,,/Fonds/#Lato</FontFamily>
     <FontFamily x:Key="LatoThin">pack://appliction;,,,/Fonds/#Lato Thin</FontFamily>
     <FontFamily x:Key="LatoThinItalic">pack://appliction;,,,/Fonds/#Lato Thin Italic</FontFamily>

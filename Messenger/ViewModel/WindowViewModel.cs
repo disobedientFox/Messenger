@@ -10,6 +10,7 @@ using System.Windows.Input;
 
 namespace Messenger
 {
+
     class WindowViewModel : BaseViewModel
     {
         #region Private member
@@ -70,7 +71,7 @@ namespace Messenger
 
         public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
 
-        public String AppTitle { get; set; } = "Dispair";
+        public string AppTitle { get; set; } = "Dispair";
         #endregion
 
         #region Commands
