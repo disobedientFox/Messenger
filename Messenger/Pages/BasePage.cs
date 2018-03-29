@@ -12,8 +12,15 @@ namespace Messenger
     /// <summary>
     /// A base page for all pages to gain base functionality
     /// </summary>
-    public class BasePage : Page
+    public class BasePage<VM> : Page
+        where VM : BaseViewModel, new()
     {
+        #region Private Member
+
+        private VM mViewModel;
+
+        #endregion
+
         #region Public Properties
 
         public PageAnimation PageLoadAnimation { get; set; } = PageAnimation.SlideAndFadeInFromRight;
@@ -21,6 +28,18 @@ namespace Messenger
         public PageAnimation PageUnloadAnimation { get; set; } = PageAnimation.SlideAndFadeOutToLeft;
 
         public float SlideSeconds { get; set; } = 0.8f;
+        public VM ViewModel
+        {
+            get { return mViewModel; }
+            set
+            {
+                if (mViewModel == value)
+                    return;
+
+                mViewModel = value;
+                this.DataContext = mViewModel;
+            }
+        }
 
         #endregion
 
@@ -32,6 +51,7 @@ namespace Messenger
                 this.Visibility = Visibility.Collapsed;
 
             this.Loaded += BasePage_Loaded;
+            this.ViewModel = new VM();
         }
 
         #endregion

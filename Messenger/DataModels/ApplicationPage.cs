@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Messenger.DataModels
+namespace Messenger
 {
     /// <summary>
     /// The current page of the application
