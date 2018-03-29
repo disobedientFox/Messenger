@@ -104,7 +104,12 @@
                       />
     </WindowChrome.WindowChrome>
 
-    <Grid Background="{StaticResource ForegroundLightBrush}">
+    <Grid>
+        <!-- Background image -->
+        <Grid.Background>
+            <ImageBrush  ImageSource="/Images/Backgrounds/login-background2.jpg"/>
+        </Grid.Background>
+        
         <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}"/>
     </Grid>
 </Window>

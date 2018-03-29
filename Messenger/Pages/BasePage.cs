@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows;
+using System.Windows.Media.Animation;
 
 namespace Messenger
 {
     /// <summary>
     /// A base page for all pages to gain base functionality
     /// </summary>
-    class BasePage : Page
+    public class BasePage : Page
     {
         #region Public Properties
 
@@ -26,6 +28,9 @@ namespace Messenger
 
         public BasePage()
         {
+            if (this.PageLoadAnimation != PageAnimation.None)
+                this.Visibility = Visibility.Collapsed;
+
             this.Loaded += BasePage_Loaded;
         }
 
@@ -33,10 +38,39 @@ namespace Messenger
 
         #region Animation Load / Unload
 
-        private void BasePage_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        private async void BasePage_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            
+            await AnimateIn();
         }
+
+        public async Task AnimateIn()
+        {
+            if (this.PageLoadAnimation == PageAnimation.None)
+                return;
+
+            switch(this.PageLoadAnimation)
+            {
+                case PageAnimation.SlideAndFadeInFromRight:
+
+                    this.SlideAndFadeInFromRight(this.SlideSeconds);
+                    break;
+            }
+        }
+
+        public async Task AnimateOut()
+        {
+            if (this.PageUnloadAnimation == PageAnimation.None)
+                return;
+
+            switch (this.PageUnloadAnimation)
+            {
+                case PageAnimation.SlideAndFadeOutToLeft:
+
+                    this.SlideAndFadeOutToLeft(this.SlideSeconds);
+                    break;
+            }
+        }
+
 
         #endregion
     }

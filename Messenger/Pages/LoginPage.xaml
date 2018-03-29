@@ -1,4 +1,4 @@
-﻿<Page x:Class="Messenger.LoginPage"
+﻿<local:BasePage x:Class="Messenger.LoginPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,13 +9,9 @@
       Background="Transparent"
       Title="LoginPage">
 
-    <Border Background="Black" >
+    <Border >
         <Grid>
-            <!-- Background image -->
-            <Grid.Background>
-                <ImageBrush  ImageSource="/Images/Backgrounds/login-background2.jpg"/>
-            </Grid.Background>
-
+            
             <!-- Maint content scroll-->
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" RenderTransformOrigin="0.497,0.499">
                 <StackPanel 
@@ -49,7 +45,7 @@
                             <PasswordBox Tag="Password" Margin="0 0 0 20"/>
 
                             <!-- Next button -->
-                            <Button Content="Next" HorizontalAlignment="Center"/>
+                            <Button Content="Next" HorizontalAlignment="Center" Click="Button_Click"/>
 
                         </StackPanel>
                     </Border>
@@ -59,4 +55,4 @@
             </ScrollViewer>
         </Grid>
     </Border>
-</Page>
+</local:BasePage>
