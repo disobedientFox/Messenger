@@ -15,5 +15,10 @@ namespace Messenger
         /// Login page
         /// </summary>
         Login = 0,
+
+        /// <summary>
+        /// Chat page
+        /// </summary>
+        Chat = 1,
     }
 }

@@ -21,27 +21,27 @@
                     <ControlTemplate TargetType="{x:Type Window}">
                         <Border Padding="{Binding OuterMarginSizeThickness, FallbackValue=6}">
                             <Grid>
-                                
+
                                 <!-- Opacity mask for corners on grid -->
                                 <Border x:Name="Conteiner"
                                         Background="{StaticResource BackgroundLightBrush}"
                                         CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"/>
-                                
-                                
+
+
                                 <Border CornerRadius="{Binding WindowCornerRadius}"
                                         Background="{Binding ForegroundLightBrush, FallbackValue=White}">
                                     <Border.Effect>
                                         <DropShadowEffect ShadowDepth="0" Opacity="0.4"/>
                                     </Border.Effect>
                                 </Border>
-                                
+
                                 <!-- The main window content-->
                                 <Grid>
                                     <!-- Corner clipping -->
                                     <Grid.OpacityMask>
                                         <VisualBrush Visual="{Binding ElementName=Conteiner}"/>
                                     </Grid.OpacityMask>
-                                    
+
                                     <Grid.RowDefinitions>
                                         <!-- Title Bar -->
                                         <RowDefinition Height="{Binding TitleHeightGridLength, FallbackValue=42}"/>
@@ -49,7 +49,7 @@
                                         <!--Window content-->
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    
+
                                     <!--Title Bar-->
                                     <Grid Grid.Column="0" Panel.ZIndex="1">
                                         <Grid.ColumnDefinitions>
@@ -60,17 +60,17 @@
                                             <!--Windows Button-->
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
-                                        
+
                                         <!--Icon-->
                                         <Button Style="{StaticResource SystemIconButton}" Command="{Binding MenuCommand}">
                                             <Image Source="/Images/Logo/logo.png"/>
                                         </Button>
-                                        
+
                                         <!--Title-->
                                         <Viewbox Grid.Column="0" Grid.ColumnSpan="3" Margin="0">
                                             <TextBlock Text="{Binding AppTitle}" Style="{StaticResource HeaderText}"/>
                                         </Viewbox>
-                                        
+
                                         <!--Window Buttons-->
                                         <StackPanel Grid.Column="2" Orientation="Horizontal">
                                             <Button Command="{Binding MinimizeCommand}" Style="{StaticResource WindowControlButton}" Content="_"/>
@@ -79,12 +79,12 @@
                                         </StackPanel>
 
                                     </Grid>
-                                    
+
                                     <!-- Page Content -->
                                     <Border Grid.Row="1" Padding="{Binding InnerContentPadding}">
                                         <ContentPresenter Content="{TemplateBinding Content}"/>
                                     </Border>
-                                    
+
                                 </Grid>
 
                             </Grid>
@@ -105,11 +105,21 @@
     </WindowChrome.WindowChrome>
 
     <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
         <!-- Background image -->
         <Grid.Background>
             <ImageBrush  ImageSource="/Images/Backgrounds/login-background2.jpg"/>
         </Grid.Background>
-        
+
         <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}"/>
+
+        <local:SideMenuControl>
+            <Button Content="Test"/>
+        </local:SideMenuControl>
     </Grid>
 </Window>

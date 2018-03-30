@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Messenger.SideMenuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Messenger"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400">
+
+    <UserControl.Template>
+        <ControlTemplate TargetType="UserControl">
+            <Grid>
+                <!-- Main background -->
+                <Border Background="{StaticResource ForegroundLightBrush}">
+                    <!-- Content -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Top Menu -->
+
+                        <Grid Height="50" Background="{StaticResource TurquoiseLightBrush}">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Main buttons-->
+                            <StackPanel Orientation ="Horizontal">
+                                <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChatIcon}"/>
+                                <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeUserIcon}"/>
+                                <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomePictureIcon}"/>
+                            </StackPanel>
+
+                            <!-- Settings buttons -->
+                            <Button Grid.Column="2" Padding="20" Foreground="{StaticResource TurquoiseBrush}" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}"/>
+                        </Grid>
+
+                        <!-- Content -->
+                        <ContentPresenter Grid.Row ="2"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Template>
+</UserControl>

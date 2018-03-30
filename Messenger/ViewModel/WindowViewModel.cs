@@ -25,8 +25,8 @@ namespace Messenger
 
         #region Public Properties
 
-        public double WindowMinimumWidth { get; set; } = 400;
-        public double WindowMinimumHeight { get; set; } = 400;
+        public double WindowMinimumWidth { get; set; } = 800;
+        public double WindowMinimumHeight { get; set; } = 500;
 
         public bool Borderless { get { return (mWindow.WindowState == WindowState.Maximized || mDockPosition != WindowDockPosition.Undocked); } }
 
@@ -68,7 +68,7 @@ namespace Messenger
 
         public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + ResizeBorder); } }
 
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Chat;
 
         public string AppTitle { get; set; } = "Dispair";
         #endregion

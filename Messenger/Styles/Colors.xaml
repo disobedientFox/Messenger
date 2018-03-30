@@ -25,4 +25,10 @@
     <Color x:Key="Beige">#CFBAA7</Color>
     <SolidColorBrush x:Key="BeigeBrush" Color="{StaticResource Beige}"/>
 
+    <Color x:Key="TurquoiseLight">#5BBFB7</Color>
+    <SolidColorBrush x:Key="TurquoiseLightBrush" Color="{StaticResource TurquoiseLight}"/>
+
+    <Color x:Key="TurquoiseVeryLight">#80D1D4</Color>
+    <SolidColorBrush x:Key="TurquoiseVeryLightBrush" Color="{StaticResource TurquoiseVeryLight}"/>
+
 </ResourceDictionary>
