@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Media.Animation;
+using Messenger.Core;
 
 namespace Messenger
 {
@@ -30,14 +31,14 @@ namespace Messenger
         public float SlideSeconds { get; set; } = 0.8f;
         public VM ViewModel
         {
-            get { return mViewModel; }
+            get => mViewModel; 
             set
             {
                 if (mViewModel == value)
                     return;
 
                 mViewModel = value;
-                this.DataContext = mViewModel;
+                DataContext = mViewModel;
             }
         }
 
@@ -47,11 +48,11 @@ namespace Messenger
 
         public BasePage()
         {
-            if (this.PageLoadAnimation != PageAnimation.None)
-                this.Visibility = Visibility.Collapsed;
+            if (PageLoadAnimation != PageAnimation.None)
+                Visibility = Visibility.Collapsed;
 
-            this.Loaded += BasePage_Loaded;
-            this.ViewModel = new VM();
+            Loaded += BasePage_Loaded;
+            ViewModel = new VM();
         }
 
         #endregion
@@ -77,7 +78,7 @@ namespace Messenger
             }
         }
 
-        public async Task AnimateOut()
+        public async Task AnimatOut()
         {
             if (this.PageUnloadAnimation == PageAnimation.None)
                 return;

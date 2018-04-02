@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Messenger
+namespace Messenger.Core
 {
     public static class ExpressionsHelpers
     {

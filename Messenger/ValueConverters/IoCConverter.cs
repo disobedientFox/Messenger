@@ -1,4 +1,5 @@
 ﻿using Messenger.Core;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,22 +11,16 @@ using System.Threading.Tasks;
 namespace Messenger
 {
     /// <summary>
-    /// Converts the <see cref="ApplicationPage"/> to an actual view/page
+    /// Converts a string name to a servise pulled from the IoC container
     /// </summary>
-    public class ApplicationPageValueConverter : BaseValueConverter<ApplicationPageValueConverter>
+    public class IoCConverter : BaseValueConverter<IoCConverter>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            switch((ApplicationPage)value)
+            switch((string)parameter)
             {
-                case ApplicationPage.Login:
-                    return new LoginPage();
-
-                case ApplicationPage.Chat:
-                    return new ChatPage();
-
-                case ApplicationPage.Register:
-                    return new RegisterPage();
+                case nameof(ApplicationViewModel):
+                    return IoC.Get<ApplicationViewModel>();
 
                 default:
                     Debugger.Break();

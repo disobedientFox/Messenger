@@ -1,4 +1,5 @@
-﻿using Messeger;
+﻿using Messenger;
+using Messenger.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,47 +29,34 @@ namespace Messenger
         public double WindowMinimumWidth { get; set; } = 800;
         public double WindowMinimumHeight { get; set; } = 500;
 
-        public bool Borderless { get { return (mWindow.WindowState == WindowState.Maximized || mDockPosition != WindowDockPosition.Undocked); } }
+        public bool Borderless => (mWindow.WindowState == WindowState.Maximized || mDockPosition != WindowDockPosition.Undocked);
 
-        public int ResizeBorder { get { return Borderless ? 0 : 6; } }
+        public int ResizeBorder => Borderless ? 0 : 6;
 
-        public Thickness ResizeBorderThickness { get { return new Thickness(ResizeBorder + OuterMarginSize); } }
+        public Thickness ResizeBorderThickness => new Thickness(ResizeBorder + OuterMarginSize); 
 
         public Thickness InnerContentPadding { get; set; } = new Thickness(0);
 
         public int OuterMarginSize
         {
-            get
-            {
-                return mWindow.WindowState == WindowState.Maximized ? 0 : mOuterMarginSize;
-            }
-            set
-            {
-                mOuterMarginSize = value;
-            }
+            get => Borderless ? 0 : mOuterMarginSize;
+            set => mOuterMarginSize = value;
         }
 
         public int WindowRadius
         {
-            get
-            {
-                return mWindow.WindowState == WindowState.Maximized ? 0 : mWindowRadius;
-            }
-            set
-            {
-                mWindowRadius = value;
-            }
+            get => Borderless ? 0 : mWindowRadius;
+            set => mWindowRadius = value;
         }
 
-        public Thickness OuterMarginSizeThickness { get { return new Thickness(OuterMarginSize); } }
+        public Thickness OuterMarginSizeThickness => new Thickness(OuterMarginSize);
 
-        public CornerRadius WindowCornerRadius { get { return new CornerRadius(WindowRadius); } }
+        public CornerRadius WindowCornerRadius => new CornerRadius(WindowRadius);
 
         public int TitleHeight { get; set; } = 30;
 
-        public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + ResizeBorder); } }
+        public GridLength TitleHeightGridLength => new GridLength(TitleHeight + ResizeBorder);
 
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Chat;
 
         public string AppTitle { get; set; } = "Dispair";
         #endregion
