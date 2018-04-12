@@ -125,7 +125,7 @@
         </Grid>
         
 
-        <Grid Grid.Column ="0">
+        <Grid>
             <local:SideMenuControl>
                 <local:ChatListControl/>
             </local:SideMenuControl>
