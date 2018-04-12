@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace Messenger.Core
+namespace Messenger
 {
 
     public class LoginViewModel : BaseViewModel
@@ -25,16 +25,12 @@ namespace Messenger.Core
 
         public ICommand LoginCommand { get; set; }
 
-        public ICommand RegisterCommand { get; set; }
-
         #endregion
 
         #region Constructor
         public LoginViewModel()
         {
             LoginCommand = new RelayParameterizeCommand(async (parameter) => await Login(parameter));
-
-            RegisterCommand = new RelayCommand(async () => await Register());
 
         }
 
@@ -49,14 +45,6 @@ namespace Messenger.Core
                 var email = this.Email;
                 var pass = (parameter as IHavePassword).SecurePassword.Unsecure();
             });
-        }
-
-        public async Task Register()
-        {
-
-            IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.Register;
-
-            await Task.Delay(1);
         }
     }
 }

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Messenger.Core
+namespace Messenger
 {
     /// <summary>
     /// A base view model that fires Property Changed events as needed

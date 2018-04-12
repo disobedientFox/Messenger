@@ -26,7 +26,6 @@ namespace Messenger
             await Task.Delay((int)(seconds * 1000));
         }
 
-
         public static async Task SlideAndFadeOutToLeft(this Page page, float seconds)
         {
             // Create the storyboard

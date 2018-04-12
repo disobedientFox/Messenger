@@ -1,6 +1,6 @@
-﻿namespace Messenger.Core
+﻿namespace Messenger
 {
-    public class ChatListItemViewModel : BaseViewModel
+    class ChatListItemViewModel : BaseViewModel
     {
         public string Name { get; set; }
 

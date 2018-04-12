@@ -6,7 +6,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Messenger.Core
+namespace Messenger
 {
     public static class SerureStringHelpers
     {

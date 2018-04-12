@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Messenger"
-        xmlns:core="clr-namespace:Messenger.Core;assembly=Messenger.Core" 
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -117,20 +116,10 @@
             <ImageBrush  ImageSource="/Images/Backgrounds/login-background2.jpg"/>
         </Grid.Background>
 
-        <Grid Grid.Column="1">
-            <Frame x:Name="MainFrame" 
-                   Content="{Binding ApplicationViewModel.CurrentPage, 
-                                     Source={x:Static local:ViewModelLocator.Instanse}, 
-                                     Converter={local:ApplicationPageValueConverter}}"/>
-        </Grid>
-        
+        <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}"/>
 
-        <Grid Grid.Column ="0">
-            <local:SideMenuControl>
-                <local:ChatListControl/>
-            </local:SideMenuControl>
-        </Grid>
-
-
+        <local:SideMenuControl>
+            <local:ChatListControl/>
+        </local:SideMenuControl>
     </Grid>
 </Window>

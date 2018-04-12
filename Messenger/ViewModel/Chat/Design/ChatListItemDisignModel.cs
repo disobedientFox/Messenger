@@ -1,6 +1,6 @@
-﻿namespace Messenger.Core
+﻿namespace Messenger
 {
-    public class ChatListItemDisignModel : ChatListItemViewModel
+    class ChatListItemDisignModel : ChatListItemViewModel
     {
         #region Singleton
 

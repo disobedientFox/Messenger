@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace Messenger.Core
+namespace Messenger
 {
-    public class ChatListViewModel : BaseViewModel
+    class ChatListViewModel : BaseViewModel
     {
         public List<ChatListItemViewModel> Items { get; set; }
     }

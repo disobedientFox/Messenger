@@ -1,5 +1,4 @@
-﻿using Messenger.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -23,9 +22,6 @@ namespace Messenger
 
                 case ApplicationPage.Chat:
                     return new ChatPage();
-
-                case ApplicationPage.Register:
-                    return new RegisterPage();
 
                 default:
                     Debugger.Break();

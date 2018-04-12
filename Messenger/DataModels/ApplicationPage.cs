@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Messenger.Core
+namespace Messenger
 {
     /// <summary>
     /// The current page of the application
@@ -20,10 +20,5 @@ namespace Messenger.Core
         /// Chat page
         /// </summary>
         Chat = 1,
-
-        /// <summary>
-        /// Register page
-        /// </summary>
-        Register = 2,
     }
 }

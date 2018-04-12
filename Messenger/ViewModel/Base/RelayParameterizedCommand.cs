@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Messenger.Core
+namespace Messenger
 {
     /// <summary>
     /// A basic command that runs an Action
     /// </summary>
-    public class RelayCommand : ICommand
+    public class RelayParameterizeCommand : ICommand
     {
         #region Private Members
 
         /// <summary>
         /// The action to run
         /// </summary>
-        private Action mAction;
+        private Action<object> mAction;
 
         #endregion
 
@@ -31,7 +31,7 @@ namespace Messenger.Core
         /// <summary>
         /// Default constructor
         /// </summary>
-        public RelayCommand(Action action)
+        public RelayParameterizeCommand(Action<object> action)
         {
             mAction = action;
         }
@@ -56,7 +56,7 @@ namespace Messenger.Core
         /// <param name="parameter"></param>
         public void Execute(object parameter)
         {
-            mAction();
+            mAction(parameter);
         }
 
         #endregion
