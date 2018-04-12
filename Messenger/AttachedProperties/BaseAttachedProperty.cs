@@ -6,9 +6,7 @@ namespace Messenger
 {
     /// <summary>
     /// A base attached property to replace the vanilla WPF attached property
-    /// </summary>
-    /// <typeparam name="Parent">The parent class to be the attached property</typeparam>
-    /// <typeparam name="Property">The type of this attached property</typeparam>
+    /// </summary>    
     public abstract class BaseAttachedProperty<Parent, Property>
         where Parent : BaseAttachedProperty<Parent, Property>, new()
     {
@@ -18,6 +16,12 @@ namespace Messenger
         /// Fired when the value changes
         /// </summary>
         public event Action<DependencyObject, DependencyPropertyChangedEventArgs> ValueChanged = (sender, e) => { };
+
+        /// <summary>
+        /// Fired when the value changes, even when the value is the same
+        /// </summary>
+        public event Action<DependencyObject, object> ValueUpdated = (sender, value) => { };
+
 
         #endregion
 
@@ -35,13 +39,15 @@ namespace Messenger
         /// <summary>
         /// The attached property for this class
         /// </summary>
-        public static readonly DependencyProperty ValueProperty = DependencyProperty.RegisterAttached("Value", typeof(Property), typeof(BaseAttachedProperty<Parent, Property>), new UIPropertyMetadata(new PropertyChangedCallback(OnValuePropertyChanged)));
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.RegisterAttached(
+            "Value", 
+            typeof(Property), 
+            typeof(BaseAttachedProperty<Parent, Property>), 
+            new UIPropertyMetadata(default(Property),
+                new PropertyChangedCallback(OnValuePropertyChanged),
+                new CoerceValueCallback(OnValuePropertyUpdated)
+                ));
 
-        /// <summary>
-        /// The callback event when the <see cref="ValueProperty"/> is changed
-        /// </summary>
-        /// <param name="d">The UI element that had it's property changed</param>
-        /// <param name="e">The arguments for the event</param>
         private static void OnValuePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             // Call the parent function
@@ -51,30 +57,28 @@ namespace Messenger
             Instance.ValueChanged(d, e);
         }
 
-        /// <summary>
-        /// Gets the attached property
-        /// </summary>
-        /// <param name="d">The element to get the property from</param>
-        /// <returns></returns>
+        private static object OnValuePropertyUpdated(DependencyObject d, object value)
+        {
+            // Call the parent function
+            Instance.OnValueUpdated(d, value);
+
+            // Call event listeners
+            Instance.ValueUpdated(d, value);
+
+            return value;
+        }
+
         public static Property GetValue(DependencyObject d) => (Property)d.GetValue(ValueProperty);
 
-        /// <summary>
-        /// Sets the attached property
-        /// </summary>
-        /// <param name="d">The element to get the property from</param>
-        /// <param name="value">The value to set the property to</param>
         public static void SetValue(DependencyObject d, Property value) => d.SetValue(ValueProperty, value);
 
         #endregion
 
         #region Event Methods
 
-        /// <summary>
-        /// The method that is called when any attached property of this type is changed
-        /// </summary>
-        /// <param name="sender">The UI element that this property was changed for</param>
-        /// <param name="e">The arguments for this event</param>
         public virtual void OnValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e) { }
+
+        public virtual void OnValueUpdated(DependencyObject sender, object value) { }
 
         #endregion
     }

@@ -27,7 +27,7 @@ namespace Messenger
         #region Public Properties
 
         public double WindowMinimumWidth { get; set; } = 800;
-        public double WindowMinimumHeight { get; set; } = 500;
+        public double WindowMinimumHeight { get; set; } = 550;
 
         public bool Borderless => (mWindow.WindowState == WindowState.Maximized || mDockPosition != WindowDockPosition.Undocked);
 

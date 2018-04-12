@@ -53,6 +53,9 @@ namespace Messenger.Core
 
         public async Task Register()
         {
+            //IoC.Get<ApplicationViewModel>().SideMenuVisible ^= true;
+
+            //return;
 
             IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.Register;
 
