@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger", "Messenger\Messenger.csproj", "{B183BB7E-0B92-40F3-9E83-A263B963BED7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger.Core", "Messeger.Core\Messenger.Core.csproj", "{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,18 @@ Global
 		{B183BB7E-0B92-40F3-9E83-A263B963BED7}.Release|x64.Build.0 = Release|x64
 		{B183BB7E-0B92-40F3-9E83-A263B963BED7}.Release|x86.ActiveCfg = Release|x86
 		{B183BB7E-0B92-40F3-9E83-A263B963BED7}.Release|x86.Build.0 = Release|x86
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Debug|x64.Build.0 = Debug|Any CPU
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Debug|x86.Build.0 = Debug|Any CPU
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Release|x64.ActiveCfg = Release|Any CPU
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Release|x64.Build.0 = Release|Any CPU
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Release|x86.ActiveCfg = Release|Any CPU
+		{32FFCA19-5A19-498E-A7BC-FF8E41B38B79}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

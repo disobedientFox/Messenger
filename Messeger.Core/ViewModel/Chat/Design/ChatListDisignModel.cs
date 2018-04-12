@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-namespace Messenger
+namespace Messenger.Core
 {
-    class ChatListDisignModel : ChatListViewModel
+    public class ChatListDisignModel : ChatListViewModel
     {
         #region Singleton
 
