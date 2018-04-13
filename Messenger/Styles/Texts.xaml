@@ -105,6 +105,7 @@
                                    Text="{TemplateBinding Tag}"
                                    x:Name="placeholder"
                                    FontFamily="{StaticResource LatoThin}"
+                                   FontSize="{TemplateBinding FontSize}"
                                    Padding="{TemplateBinding Padding}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"

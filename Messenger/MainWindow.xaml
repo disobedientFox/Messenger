@@ -20,7 +20,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
-                        <Border Margin="{Binding OuterMarginSizeThickness, FallbackValue=10}">
+                        <Border Padding="{Binding OuterMarginSizeThickness, FallbackValue=10}">
                             <Grid>
 
                                 <!-- Opacity mask for corners on grid -->

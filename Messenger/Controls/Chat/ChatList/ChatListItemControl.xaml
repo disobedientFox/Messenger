@@ -5,9 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Messenger"
              xmlns:core="clr-namespace:Messenger.Core;assembly=Messenger.Core" 
-             mc:Ignorable="d" 
-             d:DesignHeight="75" d:DesignWidth="300"
-             Height="75">
+             mc:Ignorable="d"  d:DesignWidth="300">
 
     <UserControl.Resources>
         <Style x:Key="ContentStyle" TargetType="{x:Type ContentControl}">
@@ -35,8 +33,10 @@
                                     />
 
                                 <!-- Profile pictures -->
-                                <Border Grid.Column="0" Padding="12">
+                                <Border Grid.Column="0" 
+                                        Padding="12 15">
                                     <Border Background="{Binding ProfilePictureRGB, Converter={local:StringRGBToBrushConverter}}"
+                                    Height="43"
                                     Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
                                     CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
                                         <!-- initials -->
