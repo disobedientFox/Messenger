@@ -1,4 +1,4 @@
-﻿<local:BasePage x:TypeArguments="core:LoginViewModel" x:Class="Messenger.RegisterPage"
+﻿<local:BasePage x:TypeArguments="core:RegisterViewModel" x:Class="Messenger.RegisterPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -50,14 +50,18 @@
                             <Button Content="Register" 
                                     HorizontalAlignment="Center" 
                                     CommandParameter="{Binding ElementName=Page}" 
-                                    Command="{Binding LoginCommand}"
-                                    local:IsBusyProperty.Value ="{Binding LoginIsRunning}"
+                                    Command="{Binding RegisterCommand}"
+                                    local:IsBusyProperty.Value ="{Binding RegisterIsRunning}"
                                     />
 
                         </StackPanel>
                     </Border>
 
-                    <Button Style="{StaticResource TextButton}" Content="Or, I already have an account..." HorizontalAlignment="Center"/>
+                    <Button 
+                        Style="{StaticResource TextButton}" 
+                        Content="Or, I already have an account..." 
+                        HorizontalAlignment="Center"
+                        Command="{Binding LoginCommand}"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

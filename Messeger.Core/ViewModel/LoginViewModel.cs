@@ -44,10 +44,13 @@ namespace Messenger.Core
         {
             await RunCommand(() => this.LoginIsRunning, async () =>
             {
-                await Task.Delay(5000);
+                await Task.Delay(1000);
 
-                var email = this.Email;
-                var pass = (parameter as IHavePassword).SecurePassword.Unsecure();
+                // Go to chat page
+                IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Chat);
+
+                //var email = this.Email;
+                //var pass = (parameter as IHavePassword).SecurePassword.Unsecure();
             });
         }
 
@@ -57,7 +60,7 @@ namespace Messenger.Core
 
             //return;
 
-            IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.Register;
+            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Register);
 
             await Task.Delay(1);
         }

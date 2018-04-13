@@ -13,7 +13,79 @@ namespace Messenger
     /// <summary>
     /// A base page for all pages to gain base functionality
     /// </summary>
-    public class BasePage<VM> : Page
+    public class BasePage : Page
+    {
+        #region Public Properties
+
+        public PageAnimation PageLoadAnimation { get; set; } = PageAnimation.SlideAndFadeInFromRight;
+
+        public PageAnimation PageUnloadAnimation { get; set; } = PageAnimation.SlideAndFadeOutToLeft;
+
+        public float SlideSeconds { get; set; } = 0.4f;
+
+        public bool ShouldAnimateOut { get; set; }
+
+        #endregion
+
+        #region Constructor
+
+        public BasePage()
+        {
+            if (PageLoadAnimation != PageAnimation.None)
+                Visibility = Visibility.Collapsed;
+
+            Loaded += BasePage_Loaded;
+        }
+
+        #endregion
+
+        #region Animation Load / Unload
+
+        private async void BasePage_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (ShouldAnimateOut)
+                await AnimateOut();
+            else
+                await AnimateIn();
+        }
+
+        public async Task AnimateIn()
+        {
+            if (this.PageLoadAnimation == PageAnimation.None)
+                return;
+
+            switch (this.PageLoadAnimation)
+            {
+                case PageAnimation.SlideAndFadeInFromRight:
+
+                    await this.SlideAndFadeInFromRight(this.SlideSeconds);
+                    break;
+            }
+        }
+
+        public async Task AnimateOut()
+        {
+            if (this.PageUnloadAnimation == PageAnimation.None)
+                return;
+
+            switch (this.PageUnloadAnimation)
+            {
+                case PageAnimation.SlideAndFadeOutToLeft:
+
+                    await this.SlideAndFadeOutToLeft(this.SlideSeconds);
+                    break;
+            }
+        }
+
+
+        #endregion
+    }
+
+
+    /// <summary>
+    /// A base page with added ViewModel support
+    /// </summary>
+    public class BasePage<VM> : BasePage
         where VM : BaseViewModel, new()
     {
         #region Private Member
@@ -24,14 +96,9 @@ namespace Messenger
 
         #region Public Properties
 
-        public PageAnimation PageLoadAnimation { get; set; } = PageAnimation.SlideAndFadeInFromRight;
-
-        public PageAnimation PageUnloadAnimation { get; set; } = PageAnimation.SlideAndFadeOutToLeft;
-
-        public float SlideSeconds { get; set; } = 0.8f;
         public VM ViewModel
         {
-            get => mViewModel; 
+            get => mViewModel;
             set
             {
                 if (mViewModel == value)
@@ -46,52 +113,10 @@ namespace Messenger
 
         #region Constructor
 
-        public BasePage()
+        public BasePage() : base()
         {
-            if (PageLoadAnimation != PageAnimation.None)
-                Visibility = Visibility.Collapsed;
-
-            Loaded += BasePage_Loaded;
             ViewModel = new VM();
         }
-
-        #endregion
-
-        #region Animation Load / Unload
-
-        private async void BasePage_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            await AnimateIn();
-        }
-
-        public async Task AnimateIn()
-        {
-            if (this.PageLoadAnimation == PageAnimation.None)
-                return;
-
-            switch(this.PageLoadAnimation)
-            {
-                case PageAnimation.SlideAndFadeInFromRight:
-
-                    this.SlideAndFadeInFromRight(this.SlideSeconds);
-                    break;
-            }
-        }
-
-        public async Task AnimatOut()
-        {
-            if (this.PageUnloadAnimation == PageAnimation.None)
-                return;
-
-            switch (this.PageUnloadAnimation)
-            {
-                case PageAnimation.SlideAndFadeOutToLeft:
-
-                    this.SlideAndFadeOutToLeft(this.SlideSeconds);
-                    break;
-            }
-        }
-
 
         #endregion
     }

@@ -12,6 +12,10 @@
       Title="Chat">
 
     <Border >
-       
+        <TextBlock Text="Hello Alevtina" 
+                  Foreground="White" 
+                  HorizontalAlignment="Center" 
+                  VerticalAlignment="Center"
+                   FontSize="50"/>
     </Border>
 </local:BasePage>

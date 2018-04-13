@@ -117,22 +117,22 @@
             <ImageBrush  ImageSource="/Images/Backgrounds/login-background2.jpg"/>
         </Grid.Background>
 
-        <Grid Grid.Column="1">
-            <Frame x:Name="MainFrame" 
-                   Content="{Binding ApplicationViewModel.CurrentPage, 
+        <local:PageHost Grid.Column="1" 
+               d:DataContext=""
+               DataContext="{Binding ApplicationViewModel.CurrentPage, 
                                      Source={x:Static local:ViewModelLocator.Instanse}, 
-                                     Converter={local:ApplicationPageValueConverter}}"/>
-        </Grid>
-        
-            
+                                     Converter={local:ApplicationPageValueConverter}}"
+               CurrentPage="{Binding}"/>
+
+
         <!-- Side menu -->
         <local:SideMenuControl 
             Width="300" 
             local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.SideMenuVisible, 
                                      Source={x:Static local:ViewModelLocator.Instanse}}">
-            
+
             <local:ChatListControl/>
-            
+
         </local:SideMenuControl>
 
     </Grid>
