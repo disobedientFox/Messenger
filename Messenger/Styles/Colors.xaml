@@ -25,13 +25,27 @@
     <Color x:Key="Beige">#CFBAA7</Color>
     <SolidColorBrush x:Key="BeigeBrush" Color="{StaticResource Beige}"/>
 
-    <Color x:Key="TurquoiseLight">#5BBFB7</Color>
+    <Color x:Key="TurquoiseLight">#27bbae</Color>
     <SolidColorBrush x:Key="TurquoiseLightBrush" Color="{StaticResource TurquoiseLight}"/>
 
-    <Color x:Key="TurquoiseVeryLight">#80D1D4</Color>
+    <Color x:Key="TurquoiseVeryLight">#2ee7d7</Color>
     <SolidColorBrush x:Key="TurquoiseVeryLightBrush" Color="{StaticResource TurquoiseVeryLight}"/>
 
-    <Color x:Key="TurquoiseVeryVeryLight">#A0DBC5</Color>
+    <Color x:Key="TurquoiseVeryVeryLight">#dff8f6</Color>
     <SolidColorBrush x:Key="TurquoiseVeryVeryLightBrush" Color="{StaticResource TurquoiseVeryVeryLight}"/>
+
+    <Color x:Key="TurquoiseVeryDark">#135557</Color>
+    <SolidColorBrush x:Key="TurquoiseVeryDarkBrush" Color="{StaticResource TurquoiseVeryDark}"/>
+
+    <Color x:Key="TurquoiseDark">#1e847b</Color>
+    <SolidColorBrush x:Key="TurquoiseDarkBrush" Color="{StaticResource TurquoiseDark}"/>
+
+    <Color x:Key="OrangeRed">#FF4500</Color>
+    <SolidColorBrush x:Key="OrangeRedBrush" Color="{StaticResource OrangeRed}"/>
+
+
+
+    <Color x:Key="TransparentTurquoise">#0028AA9F</Color>
+    <SolidColorBrush x:Key="TransparentTurquoiseBrush" Color="{StaticResource TransparentTurquoise}"/>
 
 </ResourceDictionary>

@@ -17,11 +17,11 @@ namespace Messenger
         /// <param name="element"></param>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public static async Task SlideAndFadeInFromRight(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true)
+        public static async Task SlideAndFadeInFromRight(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true, int width = 0)
         {
             // Create the storyboard
             var sb = new Storyboard();
-            sb.AddSlideFromRight(seconds, element.ActualWidth, keepMargin: keepMargin);
+            sb.AddSlideFromRight(seconds, width == 0 ? element.ActualWidth : width, keepMargin: keepMargin);
 
             sb.AddFadeIn(seconds);
 
@@ -38,11 +38,11 @@ namespace Messenger
         /// <param name="element"></param>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public static async Task SlideAndFadeInFromLeft(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true)
+        public static async Task SlideAndFadeInFromLeft(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true, int width = 0)
         {
             // Create the storyboard
             var sb = new Storyboard();
-            sb.AddSlideFromLeft(seconds, element.ActualWidth, keepMargin: keepMargin);
+            sb.AddSlideFromLeft(seconds, width == 0 ? element.ActualWidth : width, keepMargin: keepMargin);
 
             sb.AddFadeIn(seconds);
 
@@ -59,11 +59,11 @@ namespace Messenger
         /// <param name="element"></param>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public static async Task SlideAndFadeOutToLeft(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true)
+        public static async Task SlideAndFadeOutToLeft(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true, int width = 0)
         {
             // Create the storyboard
             var sb = new Storyboard();
-            sb.AddSlideToLeft(seconds, element.ActualWidth, keepMargin: keepMargin);
+            sb.AddSlideToLeft(seconds, width == 0 ? element.ActualWidth : width, keepMargin: keepMargin);
 
             sb.AddFadeOut(seconds);
 
@@ -80,11 +80,11 @@ namespace Messenger
         /// <param name="element"></param>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public static async Task SlideAndFadeOutToRight(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true)
+        public static async Task SlideAndFadeOutToRight(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true, int width = 0)
         {
             // Create the storyboard
             var sb = new Storyboard();
-            sb.AddSlideToRight(seconds, element.ActualWidth, keepMargin: keepMargin);
+            sb.AddSlideToRight(seconds, width == 0 ? element.ActualWidth : width, keepMargin: keepMargin);
 
             sb.AddFadeOut(seconds);
 

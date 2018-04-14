@@ -69,7 +69,7 @@
                     <TextBlock VerticalAlignment="Center"
                            TextWrapping="Wrap"
                            FontFamily="{StaticResource LatoRegular}"
-                           Foreground="{StaticResource TurquoiseBrush}"
+                           Foreground="{StaticResource TurquoiseDarkBrush}"
                            Text="{Binding Message}"
                            FontSize="14"/>
 
@@ -85,21 +85,19 @@
                     <!-- Time conteiners -->
                 <StackPanel Grid.Row="2"
                             Orientation="Horizontal"
-                            Name="ExtraDetails"
-                            Opacity="0">
+                            HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAligmentConverter}, ConverterParameter=true}"
+                            Name="ExtraDetails">
                     
                     <!-- Sent time -->
                     <TextBlock Text="{Binding MessageSentTime, Converter={local:TimeToDisplayTimeConverter}}"
-                               Foreground="{StaticResource ForegroundLightBrush}"
-                               HorizontalAlignment="Right"
+                               Foreground="{StaticResource TurquoiseDarkBrush}"
                                FontSize="10"
                                Margin="0 0 15 0"
                                FontFamily="{StaticResource LatoBold}"/>
 
                     <!-- Read time -->
                     <TextBlock Text="{Binding MessageReadTime, Converter={local:TimeToReadTimeConverter}}"
-                               Foreground="{StaticResource ForegroundMainBrush}"
-                               HorizontalAlignment="Right"
+                               Foreground="{StaticResource TurquoiseVeryDarkBrush}"
                                FontSize="10"
                                FontFamily="{StaticResource LatoBold}"/>
 

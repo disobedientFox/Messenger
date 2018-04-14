@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Messenger.Core;
+using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,6 +32,9 @@ namespace Messenger
         public PageHost()
         {
             InitializeComponent();
+
+            if (DesignerProperties.GetIsInDesignMode(this))
+                NewPage.Content = (BasePage)new ApplicationPageValueConverter().Convert(IoC.Get<ApplicationViewModel>().CurrentPage);
         }
 
         #endregion
@@ -55,7 +60,14 @@ namespace Messenger
             // Animate out previous page when the Loaded event fires
             // right after this call to moving frames
             if (oldPageContent is BasePage oldPage)
+            {
                 oldPage.ShouldAnimateOut = true;
+
+                Task.Delay((int)(oldPage.SlideSeconds * 1000)).ContinueWith((t) =>
+                {
+                    Application.Current.Dispatcher.Invoke(() => oldPageFrame.Content = null);
+                });
+            }
 
             // Set the new page content
             newPageFrame.Content = e.NewValue;

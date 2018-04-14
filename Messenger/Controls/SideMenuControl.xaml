@@ -11,7 +11,7 @@
         <ControlTemplate TargetType="UserControl">
             <Grid>
                 <!-- Main background -->
-                <Border Background="{StaticResource ForegroundLightBrush}">
+                <Border>
                     <!-- Content -->
                     <Grid>
                         <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
 
                         <!-- Top Menu -->
 
-                        <Grid Height="50" Background="{StaticResource TurquoiseLightBrush}">
+                        <Grid Height="50" Background="{StaticResource TurquoiseBrush}">
 
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -37,11 +37,15 @@
                             </StackPanel>
 
                             <!-- Settings buttons -->
-                            <Button Grid.Column="2" Padding="20" Foreground="{StaticResource TurquoiseBrush}" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}"/>
+                            <Button Grid.Column="2" Padding="20" Foreground="{StaticResource TurquoiseDarkBrush}" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}"/>
                         </Grid>
 
                         <!-- Content -->
-                        <ContentPresenter Grid.Row ="2"/>
+                        <Border Background="{StaticResource ForegroundLightBrush}"
+                                Grid.Row ="2">
+                            <ContentPresenter />
+                        </Border>
+                       
                     </Grid>
                 </Border>
             </Grid>

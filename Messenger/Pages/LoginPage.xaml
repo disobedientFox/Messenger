@@ -8,8 +8,7 @@
       mc:Ignorable="d" 
       x:Name="Page"
       d:DesignHeight="700" d:DesignWidth="1000"
-      Background="Transparent"
-      Title="LoginPage">
+      Background="Transparent">
 
     <Border >
         <Grid>
@@ -41,13 +40,16 @@
                                        Margin="0 0 0 20"/>
 
                             <!-- Email -->
-                            <TextBox Text="{Binding Email}" Tag="Email"/>
+                            <TextBox Text="{Binding Email}" 
+                                     Tag="Email"
+                                     local:IsFocusedProperty.Value ="True"/>
 
                             <!-- Password -->
                             <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 20"/>
 
                             <!-- Next button -->
                             <Button Content="Login" 
+                                    IsDefault="True"
                                     HorizontalAlignment="Center" 
                                     CommandParameter="{Binding ElementName=Page}" 
                                     Command="{Binding LoginCommand}"

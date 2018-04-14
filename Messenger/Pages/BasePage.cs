@@ -7,13 +7,14 @@ using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Media.Animation;
 using Messenger.Core;
+using System.ComponentModel;
 
 namespace Messenger
 {
     /// <summary>
     /// A base page for all pages to gain base functionality
     /// </summary>
-    public class BasePage : Page
+    public class BasePage : UserControl
     {
         #region Public Properties
 
@@ -31,6 +32,9 @@ namespace Messenger
 
         public BasePage()
         {
+            if (DesignerProperties.GetIsInDesignMode(this))
+                return;
+
             if (PageLoadAnimation != PageAnimation.None)
                 Visibility = Visibility.Collapsed;
 
@@ -43,6 +47,7 @@ namespace Messenger
 
         private async void BasePage_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
+            
             if (ShouldAnimateOut)
                 await AnimateOut();
             else
@@ -58,7 +63,7 @@ namespace Messenger
             {
                 case PageAnimation.SlideAndFadeInFromRight:
 
-                    await this.SlideAndFadeInFromRight(this.SlideSeconds);
+                    await this.SlideAndFadeInFromRight(this.SlideSeconds, width: (int)Application.Current.MainWindow.Width);
                     break;
             }
         }

@@ -195,7 +195,7 @@
     <!-- Icon button -->
     <Style x:Key="IconButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
 
-        <Setter Property="Background" Value="{StaticResource TurquoiseLightBrush}"/>
+        <Setter Property="Background" Value="{StaticResource TransparentTurquoiseBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FontSize" Value="30"/>
@@ -231,7 +231,7 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="{StaticResource TurquoiseVeryLight}" 
+                                    <ColorAnimation To="{StaticResource TurquoiseLight}" 
                                                     Duration="0:0:0.2" 
                                                     Storyboard.TargetName="border" 
                                                     Storyboard.TargetProperty="Background.Color"/>
@@ -242,7 +242,7 @@
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="{StaticResource TurquoiseLight}" 
+                                    <ColorAnimation To="{StaticResource TransparentTurquoise}" 
                                                     Duration="0:0:0.2" 
                                                     Storyboard.TargetName="border" 
                                                     Storyboard.TargetProperty="Background.Color"/>
