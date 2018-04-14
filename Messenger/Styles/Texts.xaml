@@ -38,11 +38,11 @@
                         <TextBlock IsHitTestVisible="False" 
                                    Text="{TemplateBinding Tag}"
                                    x:Name="placeholder"
-                                   FontFamily="{StaticResource LatoThin}"
+                                   FontFamily="{TemplateBinding FontFamily}"
                                    Padding="{TemplateBinding Padding}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-                                   Foreground="{StaticResource ForegroundVeryDarkBrush}">
+                                   Foreground="{TemplateBinding Foreground}">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="Visibility" Value="Collapsed"/>
