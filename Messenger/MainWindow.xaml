@@ -135,5 +135,9 @@
 
         </local:SideMenuControl>
 
+        <ScrollViewer Width="150" Height="150" HorizontalScrollBarVisibility="Auto">
+            <Border Background="Aqua" Width="200" Height="200"/>
+        </ScrollViewer>
+
     </Grid>
 </Window>
