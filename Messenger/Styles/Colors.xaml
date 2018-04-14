@@ -31,4 +31,7 @@
     <Color x:Key="TurquoiseVeryLight">#80D1D4</Color>
     <SolidColorBrush x:Key="TurquoiseVeryLightBrush" Color="{StaticResource TurquoiseVeryLight}"/>
 
+    <Color x:Key="TurquoiseVeryVeryLight">#A0DBC5</Color>
+    <SolidColorBrush x:Key="TurquoiseVeryVeryLightBrush" Color="{StaticResource TurquoiseVeryVeryLight}"/>
+
 </ResourceDictionary>

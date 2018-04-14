@@ -18,14 +18,14 @@
 
                             <Grid x:Name="conteiner" Background="Transparent">
                                 <Grid.ColumnDefinitions>
-                                    <!-- New Messege Indicator Bar-->
+                                    <!-- New Message Indicator Bar-->
                                     <!-- Profile pictures -->
                                     <ColumnDefinition Width="Auto"/>
                                     <!-- Main content -->
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <!-- New Messege Indicator Bar-->
+                                <!-- New Message Indicator Bar-->
                                 <Border Background="OrangeRed" 
                                     Width="3" 
                                     HorizontalAlignment="Left"
@@ -58,8 +58,8 @@
                                                FontFamily="{StaticResource LatoRegular}"
                                                Margin="0 5 0 2"
                                                FontSize="{StaticResource FontSizeSmall}"/>
-                                        <!-- Messege -->
-                                        <TextBlock Text="{Binding Messege}"
+                                        <!-- Message -->
+                                        <TextBlock Text="{Binding Message}"
                                                FontFamily="{StaticResource LatoThin}"
                                                Foreground="{StaticResource ForegroundMainBrush}"
                                                TextTrimming="CharacterEllipsis"
@@ -111,7 +111,7 @@
         </Style>
     </UserControl.Resources>
 
-    <ContentControl d:DataContext="{x:Static core:ChatListItemDisignModel.Instanse}"
+    <ContentControl d:DataContext="{x:Static core:ChatListItemDesignModel.Instanse}"
                     Style="{StaticResource ContentStyle}"/>
 
 </UserControl>

@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
 namespace Messenger.Core
 {
-    public class ChatListDisignModel : ChatListViewModel
+    public class ChatListDesignModel : ChatListViewModel
     {
         #region Singleton
 
-        public static ChatListDisignModel Instanse => new ChatListDisignModel();
+        public static ChatListDesignModel Instanse => new ChatListDesignModel();
 
         #endregion
 
 
         #region ConstructoInstanser
 
-        public ChatListDisignModel()
+        public ChatListDesignModel()
         {
             Items = new List<ChatListItemViewModel>
             {
@@ -20,7 +20,7 @@ namespace Messenger.Core
                 {
                     Initials = "LM",
                     Name = "Luke",
-                    Messege = "This new chat app is awesome! I bet it will be faaat too",
+                    Message = "This new chat app is awesome! I bet it will be faaat too",
                     ProfilePictureRGB = "5BBFB7",
                     NewContentAvailable = true
                 },
@@ -28,7 +28,7 @@ namespace Messenger.Core
                 {
                     Initials = "JA",
                     Name = "Jesse",
-                    Messege = "Hey dude!",
+                    Message = "Hey dude!",
                     ProfilePictureRGB = "fe4503",
                     IsSelected = true
                 },
@@ -36,7 +36,7 @@ namespace Messenger.Core
                 {
                     Initials = "PL",
                     Name = "Parnell",
-                    Messege = "The new serser is up, got 192.0.18.20",
+                    Message = "The new serser is up, got 192.0.18.20",
                     ProfilePictureRGB = "00d405",
                     NewContentAvailable = true
                 },
@@ -44,42 +44,42 @@ namespace Messenger.Core
                 {
                     Initials = "LM",
                     Name = "Luke",
-                    Messege = "This new chat app is awesome! I bet it will be faaat too",
+                    Message = "This new chat app is awesome! I bet it will be faaat too",
                     ProfilePictureRGB = "5BBFB7"
                 },
                 new ChatListItemViewModel
                 {
                     Initials = "JA",
                     Name = "Jesse",
-                    Messege = "Hey dude!",
+                    Message = "Hey dude!",
                     ProfilePictureRGB = "fe4503"
                 },
                 new ChatListItemViewModel
                 {
                     Initials = "PL",
                     Name = "Parnell",
-                    Messege = "The new serser is up, got 192.0.18.20",
+                    Message = "The new serser is up, got 192.0.18.20",
                     ProfilePictureRGB = "00d405"
                 },
                 new ChatListItemViewModel
                 {
                     Initials = "LM",
                     Name = "Luke",
-                    Messege = "This new chat app is awesome! I bet it will be faaat too",
+                    Message = "This new chat app is awesome! I bet it will be faaat too",
                     ProfilePictureRGB = "5BBFB7"
                 },
                 new ChatListItemViewModel
                 {
                     Initials = "JA",
                     Name = "Jesse",
-                    Messege = "Hey dude!",
+                    Message = "Hey dude!",
                     ProfilePictureRGB = "fe4503"
                 },
                 new ChatListItemViewModel
                 {
                     Initials = "PL",
                     Name = "Parnell",
-                    Messege = "The new serser is up, got 192.0.18.20",
+                    Message = "The new serser is up, got 192.0.18.20",
                     ProfilePictureRGB = "00d405"
                 },
             };
