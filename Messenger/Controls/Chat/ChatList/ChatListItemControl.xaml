@@ -111,7 +111,7 @@
         </Style>
     </UserControl.Resources>
 
-    <ContentControl d:DataContext="{x:Static core:ChatListItemDesignModel.Instanse}"
+    <ContentControl d:DataContext="{x:Static core:ChatListItemDesignModel.Instance}"
                     Style="{StaticResource ContentStyle}"/>
 
 </UserControl>

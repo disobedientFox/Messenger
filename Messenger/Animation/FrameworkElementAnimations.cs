@@ -10,7 +10,9 @@ using System.Windows;
 namespace Messenger
 {
     public static class FrameworkElementAnimations
-    { 
+    {
+        #region Slide in from right
+
         /// <summary>
         /// Slides an element in from the right
         /// </summary>
@@ -33,7 +35,32 @@ namespace Messenger
         }
 
         /// <summary>
-        /// Slides an element in from the right
+        /// Slides an element out to the right
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="seconds"></param>
+        /// <returns></returns>
+        public static async Task SlideAndFadeOutToRight(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true, int width = 0)
+        {
+            // Create the storyboard
+            var sb = new Storyboard();
+            sb.AddSlideToRight(seconds, width == 0 ? element.ActualWidth : width, keepMargin: keepMargin);
+
+            sb.AddFadeOut(seconds);
+
+            sb.Begin(element);
+
+            element.Visibility = Visibility.Visible;
+
+            await Task.Delay((int)(seconds * 1000));
+        }
+
+        #endregion
+
+        #region Slide in from left
+
+        /// <summary>
+        /// Slides an element in from the left
         /// </summary>
         /// <param name="element"></param>
         /// <param name="seconds"></param>
@@ -74,17 +101,42 @@ namespace Messenger
             await Task.Delay((int)(seconds * 1000));
         }
 
+        #endregion
+
+        #region Slide in from bottom
+
         /// <summary>
-        /// Slides an element out to the right
+        /// Slides an element in from the buttom
         /// </summary>
         /// <param name="element"></param>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public static async Task SlideAndFadeOutToRight(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true, int width = 0)
+        public static async Task SlideAndFadeInFromBottom(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true, int height = 0)
         {
             // Create the storyboard
             var sb = new Storyboard();
-            sb.AddSlideToRight(seconds, width == 0 ? element.ActualWidth : width, keepMargin: keepMargin);
+            sb.AddSlideFromBottom(seconds, height == 0 ? element.ActualHeight : height, keepMargin: keepMargin);
+
+            sb.AddFadeIn(seconds);
+
+            sb.Begin(element);
+
+            element.Visibility = Visibility.Visible;
+
+            await Task.Delay((int)(seconds * 1000));
+        }
+
+        /// <summary>
+        /// Slides an element out to the buttom
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="seconds"></param>
+        /// <returns></returns>
+        public static async Task SlideAndFadeOutToBottom(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true, int height = 0)
+        {
+            // Create the storyboard
+            var sb = new Storyboard();
+            sb.AddSlideToBottom(seconds, height == 0 ? element.ActualHeight : height, keepMargin: keepMargin);
 
             sb.AddFadeOut(seconds);
 
@@ -94,5 +146,7 @@ namespace Messenger
 
             await Task.Delay((int)(seconds * 1000));
         }
+
+        #endregion
     }
 }

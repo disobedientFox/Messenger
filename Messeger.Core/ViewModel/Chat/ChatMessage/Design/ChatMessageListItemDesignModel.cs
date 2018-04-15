@@ -6,7 +6,7 @@ namespace Messenger.Core
     {
         #region Singleton
 
-        public static ChatMessageListItemDesignModel Instanse => new ChatMessageListItemDesignModel(); 
+        public static ChatMessageListItemDesignModel Instance => new ChatMessageListItemDesignModel(); 
 
         #endregion
 

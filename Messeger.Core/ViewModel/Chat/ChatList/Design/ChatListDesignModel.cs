@@ -5,12 +5,12 @@ namespace Messenger.Core
     {
         #region Singleton
 
-        public static ChatListDesignModel Instanse => new ChatListDesignModel();
+        public static ChatListDesignModel Instance => new ChatListDesignModel();
 
         #endregion
 
 
-        #region ConstructoInstanser
+        #region Constructor
 
         public ChatListDesignModel()
         {

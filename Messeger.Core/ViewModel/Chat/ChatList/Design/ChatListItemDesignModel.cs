@@ -4,7 +4,7 @@
     {
         #region Singleton
 
-        public static ChatListItemDesignModel Instanse => new ChatListItemDesignModel(); 
+        public static ChatListItemDesignModel Instance => new ChatListItemDesignModel(); 
 
         #endregion
 

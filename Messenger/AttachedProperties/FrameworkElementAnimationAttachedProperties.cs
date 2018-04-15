@@ -80,4 +80,17 @@ namespace Messenger
         }
 
     }
+
+    public class AnimateSlideInFromBottomProperty : AnimateBaseProperty<AnimateSlideInFromBottomProperty>
+    {
+        protected override async void DoAnimation(FrameworkElement element, bool value)
+        {
+            if (value)
+                // Animate in
+                await element.SlideAndFadeInFromBottom(FirstLoad ? 0 : 0.3f, keepMargin: false);
+            else
+                await element.SlideAndFadeOutToBottom(FirstLoad ? 0 : 0.3f, keepMargin: false);
+        }
+
+    }
 }
