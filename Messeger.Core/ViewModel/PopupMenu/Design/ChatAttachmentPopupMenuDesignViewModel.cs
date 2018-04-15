@@ -13,7 +13,6 @@
 
         public ChatAttachmentPopupMenuDesignViewModel()
         {
-            
         }
 
         #endregion

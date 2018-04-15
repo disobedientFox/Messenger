@@ -11,6 +11,8 @@ namespace Messenger.Core
 
         public bool AttachmentMenuVisible { get; set; }
 
+        public bool AnyPopupVisible => AttachmentMenuVisible;
+
         public ChatAttachmentPopupMenuViewModel AttachmentMenu { get; set; }
 
         #endregion
@@ -19,6 +21,8 @@ namespace Messenger.Core
 
         public ICommand AttachButtonCommand { get; set; }
 
+        public ICommand PupopClickawayCommand { get; set; }
+
         #endregion
 
         #region Cunstructor
@@ -26,6 +30,7 @@ namespace Messenger.Core
         public ChatMessageListViewModel()
         {
             AttachButtonCommand = new RelayCommand(AttachmentButton);
+            PupopClickawayCommand = new RelayCommand(PopupClickaway);
 
             AttachmentMenu = new ChatAttachmentPopupMenuViewModel();
         }
@@ -37,6 +42,11 @@ namespace Messenger.Core
         public void AttachmentButton()
         {
             AttachmentMenuVisible ^= true;
+        }
+
+        public void PopupClickaway()
+        {
+            AttachmentMenuVisible = false;
         }
 
         #endregion
