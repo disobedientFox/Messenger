@@ -131,7 +131,8 @@
                         Foreground="{StaticResource BackgroundVeryLightBrush}"
                         FontFamily="{StaticResource LatoRegular}"
                         Background="{StaticResource OrangeRedBrush}"
-                        FontSize="{StaticResource FontSizeSmall}"/>
+                        FontSize="{StaticResource FontSizeSmall}"
+                        Command="{Binding SendCommand}"/>
 
             </StackPanel>
             

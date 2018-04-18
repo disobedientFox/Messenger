@@ -11,7 +11,7 @@ using System.Windows.Input;
 namespace Messenger
 {
 
-    class WindowViewModel : BaseViewModel
+    public class WindowViewModel : BaseViewModel
     {
         #region Private member
 
@@ -74,6 +74,7 @@ namespace Messenger
         #endregion
 
         #region Constructor
+
         public WindowViewModel(Window window)
         {
             mWindow = window;

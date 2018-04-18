@@ -142,6 +142,11 @@
     <Compile Include="Controls\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\BaseDialogUserControl.cs" />
+    <Compile Include="IoC\UIManager.cs" />
+    <Compile Include="DialogWindow.xaml.cs">
+      <DependentUpon>DialogWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\ChatPage.xaml.cs">
       <DependentUpon>ChatPage.xaml</DependentUpon>
@@ -165,6 +170,7 @@
     <Compile Include="ValueConverters\StringRGBToBrushConverter.cs" />
     <Compile Include="ValueConverters\TimeToDisplayTimeConverter.cs" />
     <Compile Include="ValueConverters\TimeToReadTimeConverter.cs" />
+    <Compile Include="ViewModels\DialogWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="ViewModels\WindowViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
@@ -199,6 +205,10 @@
     <Page Include="Controls\SideMenuControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\ChatPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -282,7 +292,6 @@
     <Resource Include="Fonds\Lato-Thin.ttf" />
     <Resource Include="Fonds\Lato-ThinItalic.ttf" />
     <Resource Include="Fonds\fontawesome-webfont.ttf" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -310,7 +319,7 @@
     <Resource Include="Images\Backgrounds\login-background2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Messeger.Core\Messenger.Core.csproj">
+    <ProjectReference Include="..\Messenger.Core\Messenger.Core.csproj">
       <Project>{32ffca19-5a19-498e-a7bc-ff8e41b38b79}</Project>
       <Name>Messenger.Core</Name>
     </ProjectReference>

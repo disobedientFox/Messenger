@@ -23,6 +23,8 @@ namespace Messenger.Core
 
         public ICommand PupopClickawayCommand { get; set; }
 
+        public ICommand SendCommand { get; set; }
+
         #endregion
 
         #region Cunstructor
@@ -31,6 +33,7 @@ namespace Messenger.Core
         {
             AttachButtonCommand = new RelayCommand(AttachmentButton);
             PupopClickawayCommand = new RelayCommand(PopupClickaway);
+            SendCommand = new RelayCommand(Send);
 
             AttachmentMenu = new ChatAttachmentPopupMenuViewModel();
         }
@@ -47,6 +50,16 @@ namespace Messenger.Core
         public void PopupClickaway()
         {
             AttachmentMenuVisible = false;
+        }
+
+        public void Send()
+        {
+           IoC.UI.ShowMessage(new MessageBoxDialogViewModel
+            {
+                Title = "Send message",
+                Message = "Thank you for writing a nice message :)",
+                OkText = "OK"
+            });
         }
 
         #endregion

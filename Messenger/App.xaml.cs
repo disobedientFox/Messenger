@@ -18,10 +18,21 @@ namespace Messenger
         {
             base.OnStartup(e);
 
-            IoC.Setup();
+            ApplicationSetup();
 
             Current.MainWindow = new MainWindow();
             Current.MainWindow.Show();
+        }
+
+        /// <summary>
+        /// Configures app ready for use
+        /// </summary>
+        private void ApplicationSetup()
+        {
+            IoC.Setup();
+
+            IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
+            
         }
     }
 }
