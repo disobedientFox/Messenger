@@ -29,7 +29,7 @@
         <Setter Property="Padding" Value="10"/>
     </Style>
 
-    <!--System Icon button-->
+    <!--Window Control button-->
     <Style TargetType="{x:Type Button}" x:Key="WindowControlButton" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
         <Setter Property="Padding" Value="8"/>
@@ -63,6 +63,7 @@
         
     </Style>
 
+    <!--Window Close button-->
     <Style TargetType="{x:Type Button}" x:Key="WindowCloseButton" BasedOn="{StaticResource WindowControlButton}">
 
         <Style.Triggers>

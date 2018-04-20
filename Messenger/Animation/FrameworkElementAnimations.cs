@@ -53,6 +53,8 @@ namespace Messenger
             element.Visibility = Visibility.Visible;
 
             await Task.Delay((int)(seconds * 1000));
+
+            element.Visibility = Visibility.Hidden;
         }
 
         #endregion
@@ -99,6 +101,8 @@ namespace Messenger
             element.Visibility = Visibility.Visible;
 
             await Task.Delay((int)(seconds * 1000));
+
+            element.Visibility = Visibility.Hidden;
         }
 
         #endregion
@@ -124,6 +128,7 @@ namespace Messenger
             element.Visibility = Visibility.Visible;
 
             await Task.Delay((int)(seconds * 1000));
+            
         }
 
         /// <summary>
@@ -145,6 +150,9 @@ namespace Messenger
             element.Visibility = Visibility.Visible;
 
             await Task.Delay((int)(seconds * 1000));
+
+            element.Visibility = Visibility.Hidden;
+            //element.Visibility = Visibility.Collapsed;
         }
 
         #endregion
@@ -189,8 +197,8 @@ namespace Messenger
             element.Visibility = Visibility.Visible;
             
             await Task.Delay((int)(seconds * 1000));
-            
-            element.Visibility = Visibility.Collapsed;
+
+            element.Visibility = Visibility.Hidden;
         }
 
         #endregion

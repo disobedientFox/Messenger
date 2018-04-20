@@ -13,6 +13,8 @@ namespace Messenger.Core
 
         public bool SideMenuVisible { get; set; } = true;
 
+        public bool SettingsMenuVisible { get; set; } = false;
+
         public void GoToPage(ApplicationPage page)
         {
             // Set the current page

@@ -50,7 +50,7 @@ namespace Messenger.Core
 
         public async Task Login()
         {
-            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Login);
+            IoC.Application.GoToPage(ApplicationPage.Login);
 
             await Task.Delay(1);
         }

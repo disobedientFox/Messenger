@@ -83,9 +83,9 @@
     <Compile Include="ViewModel\PopupMenu\ChatAttachmentPopupMenuViewModel.cs" />
     <Compile Include="ViewModel\PopupMenu\Design\ChatAttachmentPopupMenuDesignViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
+    <Compile Include="ViewModel\SettingsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

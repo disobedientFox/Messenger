@@ -41,4 +41,5 @@
 
     <system:String x:Key="FontAwesomePaperclipIcon">&#xf0c6;</system:String>
     <system:String x:Key="FontAwesomeEmojiIcon">&#xf118;</system:String>
+    <system:String x:Key="FontAwesomeArrowLeftIcon">&#xf053;</system:String>
 </ResourceDictionary>

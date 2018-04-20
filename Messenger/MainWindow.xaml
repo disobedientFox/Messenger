@@ -119,12 +119,18 @@
             <ImageBrush  ImageSource="/Images/Backgrounds/login-background2.jpg"/>
         </Grid.Background>
 
+        <!-- Settings page -->
+        <local:SettingsControl Grid.ColumnSpan="2"
+                               Panel.ZIndex="9"
+                               local:AnimateSlideInFromBottomMarginProperty.Value="{Binding ApplicationViewModel.SettingsMenuVisible,
+                               Source={x:Static local:ViewModelLocator.Instance}}"/>
+
         <!-- Dimmed overlay -->
         <Border Grid.ColumnSpan="2"
                     Panel.ZIndex="10"
                     Opacity="0.3">
             <Border Background="{StaticResource ForegroundVeryDarkBrush}"
-                        local:AnimateFadeInProperty.Value="{Binding DimmableOverlayVisible}"
+                    local:AnimateFadeInProperty.Value="{Binding DimmableOverlayVisible}"
                         />
         </Border>
 

@@ -15,6 +15,10 @@ namespace Messenger.Core
 
         public static IUIManager UI => IoC.Get<IUIManager>();
 
+        public static ApplicationViewModel Application => IoC.Get<ApplicationViewModel>();
+
+        public static SettingsViewModel Settings => IoC.Get<SettingsViewModel>();
+
         #endregion
 
         #region Construction
@@ -27,6 +31,7 @@ namespace Messenger.Core
         private static void BindViewModels()
         {
             Kernel.Bind<ApplicationViewModel>().ToConstant(new ApplicationViewModel());
+            Kernel.Bind<SettingsViewModel>().ToConstant(new SettingsViewModel());
         }
 
         #endregion

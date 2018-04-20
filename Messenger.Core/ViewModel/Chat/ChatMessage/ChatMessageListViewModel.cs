@@ -54,12 +54,12 @@ namespace Messenger.Core
 
         public void Send()
         {
-           IoC.UI.ShowMessage(new MessageBoxDialogViewModel
-            {
-                Title = "Send message",
-                Message = "Thank you for writing a nice message :)",
-                OkText = "OK"
-            });
+            IoC.UI.ShowMessage(new MessageBoxDialogViewModel
+             {
+                 Title = "Send message",
+                 Message = "Thank you for writing a nice message :)",
+                 OkText = "OK"
+             });
         }
 
         #endregion

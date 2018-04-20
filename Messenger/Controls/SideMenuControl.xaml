@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Messenger"
+             xmlns:core="clr-namespace:Messenger.Core;assembly=Messenger.Core"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="400">
 
@@ -31,13 +32,22 @@
 
                             <!-- Main buttons-->
                             <StackPanel Orientation ="Horizontal">
-                                <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChatIcon}"/>
-                                <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeUserIcon}"/>
-                                <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomePictureIcon}"/>
+                                <Button Style="{StaticResource IconButton}" 
+                                        Content="{StaticResource FontAwesomeChatIcon}"/>
+                                <Button Style="{StaticResource IconButton}" 
+                                        Content="{StaticResource FontAwesomeUserIcon}"/>
+                                <Button Style="{StaticResource IconButton}" 
+                                        Content="{StaticResource FontAwesomePictureIcon}"/>
                             </StackPanel>
 
                             <!-- Settings buttons -->
-                            <Button Grid.Column="2" Padding="20" Foreground="{StaticResource TurquoiseDarkBrush}" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}"/>
+                            <Button Grid.Column="2" 
+                                    Padding="20" 
+                                    Foreground="{StaticResource TurquoiseDarkBrush}" 
+                                    Style="{StaticResource IconButton}" 
+                                    Content="{StaticResource FontAwesomeCogIcon}"
+                                    Command="{Binding SettingsViewModel.OpenCommand,
+                                    Source={x:Static local:ViewModelLocator.Instance}}"/>
                         </Grid>
 
                         <!-- Content -->
