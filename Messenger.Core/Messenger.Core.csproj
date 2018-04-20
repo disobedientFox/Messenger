@@ -71,6 +71,8 @@
     <Compile Include="ViewModel\Chat\ChatMessage\ChatMessageListViewModel.cs" />
     <Compile Include="ViewModel\Chat\ChatMessage\Design\ChatMessageListDesignModel.cs" />
     <Compile Include="ViewModel\Chat\ChatMessage\Design\ChatMessageListItemDesignModel.cs" />
+    <Compile Include="ViewModel\Dialogs\BaseDialogViewModel.cs" />
+    <Compile Include="ViewModel\Dialogs\Design\MessageBoxDialogDesignModel.cs" />
     <Compile Include="ViewModel\Dialogs\MessageBoxDialogViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\Menu\Design\MenuDesignModel.cs" />

@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Messenger
 {
@@ -16,7 +17,7 @@ namespace Messenger
 
         #region Public Commands
 
-
+        public ICommand CloseCommand { get; private set; }
 
         #endregion
 
@@ -37,6 +38,8 @@ namespace Messenger
         {
             mDialogWindow = new DialogWindow();
             mDialogWindow.ViewModel = new DialogWindowViewModel(mDialogWindow);
+
+            CloseCommand = new RelayCommand(() => mDialogWindow.Close());
         }
 
         #endregion
@@ -44,31 +47,41 @@ namespace Messenger
         #region Public Dialog show methods
 
         public Task ShowDialog<T>(T viewModel)
-            where T : BaseViewModel
+            where T : BaseDialogViewModel
         {
+            // Create a task to await the dialog closing
             var tcs = new TaskCompletionSource<bool>();
 
+            // Run on UI thread
             Application.Current.Dispatcher.Invoke(() =>
             {
                 try
                 {
-                    mDialogWindow.ViewModel.WindowMinimumHeight = WindowMinimumHeight;
+                    // Match controls expected sizes to the dialog windows view model
                     mDialogWindow.ViewModel.WindowMinimumWidth = WindowMinimumWidth;
+                    mDialogWindow.ViewModel.WindowMinimumHeight = WindowMinimumHeight;
                     mDialogWindow.ViewModel.TitleHeight = TitleHeight;
-                    mDialogWindow.ViewModel.Title = Title;
+                    mDialogWindow.ViewModel.Title = string.IsNullOrEmpty(viewModel.Title) ? Title : viewModel.Title;
 
+                    // Set this control to the dialog window content
+                    mDialogWindow.ViewModel.Content = this;
+
+                    // Setup this controls data context binding to the view model
                     DataContext = viewModel;
 
+                    // Show dialog
                     mDialogWindow.ShowDialog();
                 }
                 finally
                 {
+                    // Let caller know we finished
                     tcs.TrySetResult(true);
                 }
             });
 
             return tcs.Task;
         }
+
 
         #endregion
 

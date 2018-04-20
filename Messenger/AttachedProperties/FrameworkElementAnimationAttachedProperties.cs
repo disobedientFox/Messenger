@@ -93,4 +93,17 @@ namespace Messenger
         }
 
     }
+
+    public class AnimateFadeInProperty : AnimateBaseProperty<AnimateFadeInProperty>
+    {
+        protected override async void DoAnimation(FrameworkElement element, bool value)
+        {
+            if (value)
+                // Animate in
+                await element.FadeIn(FirstLoad ? 0 : 0.1f);
+            else
+                // Animate out
+                await element.FadeOut(FirstLoad ? 0 : 0.1f);
+        }
+    }
 }

@@ -26,6 +26,8 @@ namespace Messenger
 
         #region Public Properties
 
+        public bool DimmableOverlayVisible { get; set; }
+
         public double WindowMinimumWidth { get; set; } = 800;
         public double WindowMinimumHeight { get; set; } = 550;
 

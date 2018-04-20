@@ -1,8 +1,7 @@
 ﻿namespace Messenger.Core
 {
-    public class MessageBoxDialogViewModel : BaseViewModel
+    public class MessageBoxDialogViewModel : BaseDialogViewModel
     {
-        public string Title { get; set; }
         
         public string Message { get; set; }
 

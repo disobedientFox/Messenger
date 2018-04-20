@@ -13,6 +13,8 @@
         Icon="Images/Logo/logo-small.png"
         MinWidth="{Binding WindowMinimumWidth}"
         MinHeight="{Binding WindowMinimumHeight}"
+        Deactivated="AppWindow_Deactivated"
+        Activated="AppWindow_Activated"
         Title="MainWindow" Height="600" Width="900">
 
     <Window.Resources>
@@ -116,6 +118,15 @@
         <Grid.Background>
             <ImageBrush  ImageSource="/Images/Backgrounds/login-background2.jpg"/>
         </Grid.Background>
+
+        <!-- Dimmed overlay -->
+        <Border Grid.ColumnSpan="2"
+                    Panel.ZIndex="10"
+                    Opacity="0.3">
+            <Border Background="{StaticResource ForegroundVeryDarkBrush}"
+                        local:AnimateFadeInProperty.Value="{Binding DimmableOverlayVisible}"
+                        />
+        </Border>
 
         <local:PageHost Grid.Column="1" 
                d:DataContext=""

@@ -148,5 +148,51 @@ namespace Messenger
         }
 
         #endregion
+
+        #region Fade In / Out
+
+        /// <summary>
+        /// Fades an element in
+        /// </summary>
+        /// <param name="element">The element to animate</param>
+        /// <param name="seconds">The time the animation will take</param>
+        /// <returns></returns>
+        public static async Task FadeIn(this FrameworkElement element, float seconds = 0.3f)
+        {
+            // Create the storyboard
+            var sb = new Storyboard();
+            
+            sb.AddFadeIn(seconds);
+            
+            sb.Begin(element);
+            
+            element.Visibility = Visibility.Visible;
+            
+            await Task.Delay((int)(seconds * 1000));
+        }
+
+        /// <summary>
+        /// Fades out an element
+        /// </summary>
+        /// <param name="element">The element to animate</param>
+        /// <param name="seconds">The time the animation will take</param>
+        /// <returns></returns>
+        public static async Task FadeOut(this FrameworkElement element, float seconds = 0.3f)
+        {
+            // Create the storyboard
+            var sb = new Storyboard();
+            
+            sb.AddFadeOut(seconds);
+            
+            sb.Begin(element);
+            
+            element.Visibility = Visibility.Visible;
+            
+            await Task.Delay((int)(seconds * 1000));
+            
+            element.Visibility = Visibility.Collapsed;
+        }
+
+        #endregion
     }
 }

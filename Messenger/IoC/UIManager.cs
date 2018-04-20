@@ -1,19 +1,24 @@
-﻿using Messenger.Core;
+﻿
+using System;
 using System.Threading.Tasks;
+using Messenger.Core;
 using System.Windows;
 
 namespace Messenger
 {
+    /// <summary>
+    /// The applications implementation of the <see cref="IUIManager"/>
+    /// </summary>
     public class UIManager : IUIManager
     {
         /// <summary>
-        /// Display a single message box to the user
+        /// Displays a single message box to the user
         /// </summary>
-        /// <param name="viewModel"></param>
+        /// <param name="viewModel">The view model</param>
         /// <returns></returns>
         public Task ShowMessage(MessageBoxDialogViewModel viewModel)
         {
-            throw new System.NotImplementedException();
+            return new DialogMessageBox().ShowDialog(viewModel);
         }
     }
 }
