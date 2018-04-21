@@ -63,7 +63,7 @@ namespace Messenger
             {
                 case PageAnimation.SlideAndFadeInFromRight:
 
-                    await this.SlideAndFadeInFromRight(this.SlideSeconds, width: (int)Application.Current.MainWindow.Width);
+                    await this.SlideAndFadeIn(AnimationSlideInDirection.Right, false, SlideSeconds, size: (int)Application.Current.MainWindow.Width);
                     break;
             }
         }
@@ -77,7 +77,7 @@ namespace Messenger
             {
                 case PageAnimation.SlideAndFadeOutToLeft:
 
-                    await this.SlideAndFadeOutToLeft(this.SlideSeconds);
+                    await this.SlideAndFadeOut(AnimationSlideInDirection.Right, SlideSeconds);
                     break;
             }
         }
