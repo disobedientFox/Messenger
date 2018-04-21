@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace Messenger
@@ -30,13 +31,17 @@ namespace Messenger
             // On first load...
             if (FirstLoad)
             {
+
+                //element.Visibility = Visibility.Hidden; 
+
                 // Create a single self-unnhookable event
                 // for the element Loaded event
 
                 RoutedEventHandler onLoaded = null;
 
-                onLoaded = (ss, ee) =>
+                onLoaded =  (ss, ee) =>
                 {
+                    //await Task.Delay(5);
                     // Unhook ourselves
                     element.Loaded -= onLoaded;
 

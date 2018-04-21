@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Messenger"
              xmlns:core="clr-namespace:Messenger.Core;assembly=Messenger.Core"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="500" d:DesignWidth="800">
     <Border Padding="10"
             Background="{StaticResource ForegroundLightBrush}" >
         <Grid>
@@ -43,6 +43,64 @@
             </Grid>
 
             <!-- Main content -->
+
+            <Grid Grid.Row="1"
+                  VerticalAlignment="Top"
+                  Width="800"
+                  Margin="0 30">
+
+                <Grid.ColumnDefinitions>
+                    <!-- Profile picture -->
+                    <ColumnDefinition Width="350"/>
+                    <!-- Profile details -->
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Profile picture -->
+                <Border CornerRadius="150"
+                        Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                        VerticalAlignment="Center"
+                        Margin="10 0 10 0"
+                        MaxWidth="300">
+                    <Border.Background>
+                        <ImageBrush ImageSource="/Images/Samples/disobedientFox.PNG" Stretch="UniformToFill"/>
+                    </Border.Background>
+                </Border>
+
+                <!-- Profile details -->
+                <Grid Grid.Column="1"
+                      local:PanelChildMarginProperty.Value="20 10"
+                      VerticalAlignment="Center">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Labels -->
+                    <TextBlock Text="Name" FontFamily="{StaticResource LatoRegular}"/>
+                    <TextBlock Text="Username" Grid.Row="1" FontFamily="{StaticResource LatoRegular}"/>
+                    <TextBlock Text="Password" Grid.Row="2" FontFamily="{StaticResource LatoRegular}"/>
+                    <TextBlock Text="Email" Grid.Row="3" FontFamily="{StaticResource LatoRegular}"/>
+                    
+                    <!-- Content -->
+                    <TextBlock Text="Alevtina Yarychevskaya" Grid.Column="1"/>
+                    <TextBlock Text="Alia" Grid.Column="1" Grid.Row="1"/>
+                    <TextBlock Text="********" Grid.Column="1" Grid.Row="2"/>
+                    <TextBlock Text="contact@me.com" Grid.Column="1" Grid.Row="3"/>
+
+                </Grid>
+
+
+            </Grid>
 
         </Grid>
     </Border>

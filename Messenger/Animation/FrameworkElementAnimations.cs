@@ -139,6 +139,9 @@ namespace Messenger
         /// <returns></returns>
         public static async Task SlideAndFadeOutToBottom(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true, int height = 0)
         {
+            //if(seconds == 0)
+                //element.Visibility = Visibility.Hidden;
+
             // Create the storyboard
             var sb = new Storyboard();
             sb.AddSlideToBottom(seconds, height == 0 ? element.ActualHeight : height, keepMargin: keepMargin);
@@ -146,7 +149,7 @@ namespace Messenger
             sb.AddFadeOut(seconds);
 
             sb.Begin(element);
-
+            
             element.Visibility = Visibility.Visible;
 
             await Task.Delay((int)(seconds * 1000));
