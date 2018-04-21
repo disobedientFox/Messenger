@@ -83,13 +83,16 @@
                             Converter={local:BooleanInvertConverter}}">
                 
                 <!-- Edit Buttons -->
-                <Button Content="..." 
+                <Button Content="{StaticResource FontAwesomeEllipsisHorizontalIcon}" 
+                        FontFamily="{StaticResource FontAwesome}"
                         Padding=" 8 0"
+                        Foreground="{StaticResource ForegroundMainBrush}"
                         x:Name="EditButton"
                         Opacity="0"
                         Cursor="Hand"
                         Command="{Binding EditCommand}"
-                        FontSize="22"/>
+                        FontSize="12"
+                        Style="{StaticResource IconGrowButton}"/>
             </Grid>
 
             
@@ -100,27 +103,32 @@
                 <Button IsDefault="True"
                         Content="{StaticResource FontAwesomeTickIcon}"
                         Command="{Binding SaveCommand}"
-                        Background="{StaticResource TurquoiseLightBrush}"
+                        Foreground="{StaticResource ForegroundMainBrush}"
                         FontFamily="{StaticResource FontAwesome}"
                         VerticalAlignment="Center"
-                        Padding="15 2"
-                        Margin="0 0 2 0"
                         Cursor="Hand"
-                        FontSize="22"
-                        local:AnimateFadeInProperty.Value="{Binding Editing}"/>
+                        FontSize="12"
+                        Height="50"
+                        
+                        Padding="8 0"
+                        local:AnimateFadeInProperty.Value="{Binding Editing}"
+                        Style="{StaticResource IconGrowButton}"/>
 
                 <!-- Cancel Button -->
+
                 <Button IsCancel="True"
                         Content="{StaticResource FontAwesomeCloseIcon}"
                         Command="{Binding CancelCommand}"
                         FontFamily="{StaticResource FontAwesome}"
-                        Background="{StaticResource OrangeRedBrush}"
+                        Foreground="{StaticResource OrangeRedBrush}"
+                        Style="{StaticResource IconGrowButton}"
                         VerticalAlignment="Center"
-                        Padding="15 2"
                         Cursor="Hand"
-                        FontSize="22"
-                        Margin="0 0 2 0"
-                        local:AnimateFadeInProperty.Value="{Binding Editing}"/>
+                        Padding="8 0"
+                        Height="50"
+                        local:AnimateFadeInProperty.Value="{Binding Editing}"
+                        FontSize="12"/>
+
 
             </StackPanel>
 
