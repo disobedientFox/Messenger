@@ -1,7 +1,7 @@
 ﻿namespace Messenger.Core
 {
     /// <summary>
-    /// Details for a message box dialog
+    /// The desing-time for a <see cref="MessageBoxDialogDesignModel"/>
     /// </summary>
     public class MessageBoxDialogDesignModel : MessageBoxDialogViewModel
     {

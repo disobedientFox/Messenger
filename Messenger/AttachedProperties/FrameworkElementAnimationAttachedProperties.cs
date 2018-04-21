@@ -149,10 +149,10 @@ namespace Messenger
         {
             if (value)
                 // Animate in
-                await element.FadeIn(firstLoad, firstLoad ? 0 : 0.3f);
+                await element.FadeIn(firstLoad, firstLoad ? 0 : 0.15f);
             else
                 // Animate out
-                await element.FadeOut(firstLoad ? 0 : 0.3f);
+                await element.FadeOut(firstLoad ? 0 : 0.15f);
         }
     }
 
