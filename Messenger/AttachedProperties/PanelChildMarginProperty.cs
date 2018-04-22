@@ -13,7 +13,7 @@ namespace Messenger
 
             panel.Loaded += (s, ee) =>
             {
-                foreach (FrameworkElement child in panel.Children)
+                foreach (var child in panel.Children)
                     (child as FrameworkElement).Margin = (Thickness)new ThicknessConverter().ConvertFromString(e.NewValue as string);
             };
         }

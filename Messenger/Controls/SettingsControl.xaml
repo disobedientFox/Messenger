@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Messenger"
              xmlns:core="clr-namespace:Messenger.Core;assembly=Messenger.Core"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="800">
+             DataContext="{x:Static core:SettingsDesignModel.Instance}">
+
     <Border Padding="10"
             Background="{StaticResource ForegroundLightBrush}" >
         <Grid>
@@ -59,8 +60,8 @@
                 <!-- Profile picture -->
                 <Border CornerRadius="150"
                         Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-                        VerticalAlignment="Center"
-                        Margin="10 0 10 0"
+                        VerticalAlignment="Top"
+                        Margin="10 15 10 0"
                         MaxWidth="300">
                     <Border.Background>
                         <ImageBrush ImageSource="/Images/Samples/disobedientFox.PNG" Stretch="UniformToFill"/>
@@ -69,15 +70,31 @@
 
                 <!-- Profile details -->
                 <StackPanel Grid.Column="1">
-                    <local:TextEntryControl/>
-                    <local:TextEntryControl/>
-                    <local:TextEntryControl/>
-                    <local:TextEntryControl/>
+                    <local:TextEntryControl LabelWidth="110" DataContext="{Binding Name}"/>
+                    <local:TextEntryControl LabelWidth="110" DataContext="{Binding Username}"/>
+                    <local:PasswordEntryControl LabelWidth="110" DataContext="{Binding Password}"/>
+                    <local:TextEntryControl LabelWidth="110" DataContext="{Binding Email}"/>
+
+                    
                 </StackPanel>
                 
 
             </Grid>
 
+            <Button Grid.Row="2"
+                    Content="{StaticResource FontAwesomeLogoutIcon}" 
+                    FontSize="18"
+                    Command="{Binding LogoutCommand}"
+                    Style="{StaticResource IconGrowButton}"
+                    Foreground="{StaticResource OrangeRedBrush}"
+                    Height="60"
+                    HorizontalAlignment="Right"
+                    Padding="10"
+                    VerticalAlignment="Bottom"
+                    Margin="0 0 20 0"/>
+
         </Grid>
+        
+
     </Border>
 </UserControl>

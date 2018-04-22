@@ -22,16 +22,26 @@ namespace Messenger
     {
         public override void OnValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            if (!(sender is TextBoxBase control))
-                return;
-
-            if((bool)e.NewValue)
+            if (sender is TextBoxBase control)
             {
-                control.Focus();
+                if ((bool)e.NewValue)
+                {
+                    control.Focus();
 
-                control.SelectAll();
+                    control.SelectAll();
+                }
             }
-            
+
+            if (sender is PasswordBox password)
+            {
+                if ((bool)e.NewValue)
+                {
+                    password.Focus();
+
+                    password.SelectAll();
+                }
+            }
+
         }
 
     }

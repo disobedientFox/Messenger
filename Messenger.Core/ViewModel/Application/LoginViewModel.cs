@@ -46,6 +46,11 @@ namespace Messenger.Core
             {
                 await Task.Delay(1000);
 
+                IoC.Settings.Name = new TextEntryViewModel { Label = "Name", OriginalText = $"Alia Yarychevskaya{DateTime.Now.ToLocalTime()}" };
+                IoC.Settings.Username = new TextEntryViewModel { Label = "Username", OriginalText = "Alia" };
+                IoC.Settings.Password = new PasswordEntryViewModel { Label = "Password", FakePassword = "********" };
+                IoC.Settings.Email = new TextEntryViewModel { Label = "Email", OriginalText = "contact@me.com" };
+
                 // Go to chat page
                 IoC.Application.GoToPage(ApplicationPage.Chat);
 

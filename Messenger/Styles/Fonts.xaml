@@ -45,5 +45,6 @@
 
     <system:String x:Key="FontAwesomeTickIcon">&#xf00c;</system:String>
     <system:String x:Key="FontAwesomeCloseIcon">&#xf00d;</system:String>
-    <system:String x:Key="FontAwesomeEllipsisHorizontalIcon">&#xf141;</system:String>
+    <system:String x:Key="FontAwesomeEllipsisHorizontalIcon">&#xf044;</system:String>
+    <system:String x:Key="FontAwesomeLogoutIcon">&#xf011;</system:String>
 </ResourceDictionary>

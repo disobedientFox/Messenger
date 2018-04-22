@@ -9,7 +9,7 @@ namespace Messenger.Core
 
         public TextEntryViewModel Name { get; set; }
 
-        public TextEntryViewModel Password { get; set; }
+        public PasswordEntryViewModel Password { get; set; }
 
         public TextEntryViewModel Username { get; set; }
 
@@ -23,6 +23,10 @@ namespace Messenger.Core
         
         public ICommand OpenCommand { get; set; }
 
+        public ICommand LogoutCommand { get; set; }
+
+        public ICommand ClearUserDataCommand { get; set; }
+
         #endregion
 
         #region Constructor
@@ -32,6 +36,16 @@ namespace Messenger.Core
             CloseCommand = new RelayCommand(Close);
 
             OpenCommand = new RelayCommand(Open);
+
+            LogoutCommand = new RelayCommand(Logout);
+
+            ClearUserDataCommand = new RelayCommand(ClearUserData);
+
+            Name = new TextEntryViewModel { Label = "Name", OriginalText = $"Alia Yarychevskaya" };
+            Username = new TextEntryViewModel { Label = "Username", OriginalText = "Alia" };
+            Password = new PasswordEntryViewModel { Label = "Password", FakePassword = "********" };
+            Email = new TextEntryViewModel { Label = "Email", OriginalText = "contact@me.com" };
+
         }
 
         #endregion
@@ -43,6 +57,21 @@ namespace Messenger.Core
         public void Open()
         {
             IoC.Application.SettingsMenuVisible = true;
+        }
+
+        public void Logout()
+        {
+            ClearUserData();
+
+            IoC.Application.GoToPage(ApplicationPage.Login);
+        }
+
+        public void ClearUserData()
+        {
+            Name = null;
+            Username = null;
+            Password = null;
+            Email = null;
         }
     }
 }

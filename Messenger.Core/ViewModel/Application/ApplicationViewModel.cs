@@ -17,11 +17,14 @@ namespace Messenger.Core
 
         public void GoToPage(ApplicationPage page)
         {
+            SettingsMenuVisible = false;
+
             // Set the current page
             CurrentPage = page;
 
             // Show side menu or not?
             SideMenuVisible = page == ApplicationPage.Chat;
+
         }
     }
 }
