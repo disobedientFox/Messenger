@@ -11,16 +11,22 @@ namespace Messenger.Core
     {
         public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Chat;
 
+        public BaseViewModel CurrentPageViewModel { get; set; }
+
         public bool SideMenuVisible { get; set; } = true;
 
         public bool SettingsMenuVisible { get; set; } = false;
 
-        public void GoToPage(ApplicationPage page)
+        public void GoToPage(ApplicationPage page, BaseViewModel viewModel = null)
         {
             SettingsMenuVisible = false;
-
+            
+            CurrentPageViewModel = viewModel;
+            
             // Set the current page
             CurrentPage = page;
+
+            OnPropertyChanged(nameof(CurrentPage));
 
             // Show side menu or not?
             SideMenuVisible = page == ApplicationPage.Chat;

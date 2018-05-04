@@ -7,7 +7,12 @@ namespace Messenger
     /// </summary>
     public partial class ChatPage : BasePage<ChatMessageListViewModel>
     {
-        public ChatPage()
+        public ChatPage() : base()
+        {
+            InitializeComponent();
+        }
+
+        public ChatPage(ChatMessageListViewModel specificViewModel = null) : base(specificViewModel)
         {
             InitializeComponent();
         }

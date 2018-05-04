@@ -8,10 +8,19 @@ namespace Messenger
     /// </summary>
     public partial class RegisterPage : BasePage<RegisterViewModel>, IHavePassword
     {
+        #region Constructors
+
         public RegisterPage()
         {
             InitializeComponent();
         }
+
+        public RegisterPage(RegisterViewModel specificViewModel) : base(specificViewModel)
+        {
+            InitializeComponent();
+        }
+
+        #endregion
 
         public SecureString SecurePassword => PasswordText.SecurePassword;
     }
