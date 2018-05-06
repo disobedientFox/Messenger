@@ -86,7 +86,8 @@
                 <StackPanel Grid.Row="2"
                             Orientation="Horizontal"
                             HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAligmentConverter}, ConverterParameter=true}"
-                            Name="ExtraDetails">
+                            Name="ExtraDetails"
+                            Opacity="0">
                     
                     <!-- Sent time -->
                     <TextBlock Text="{Binding MessageSentTime, Converter={local:TimeToDisplayTimeConverter}}"

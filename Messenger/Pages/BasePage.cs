@@ -41,6 +41,9 @@ namespace Messenger
                     return;
 
                 mViewModel = value;
+
+                OnViewModelChanged();
+
                 DataContext = mViewModel;
             }
         }
@@ -103,6 +106,11 @@ namespace Messenger
 
 
         #endregion
+
+        protected virtual void OnViewModelChanged()
+        {
+
+        }
     }
 
 
