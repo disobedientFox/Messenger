@@ -69,6 +69,9 @@ namespace Messenger
                     // Setup this controls data context binding to the view model
                     DataContext = viewModel;
 
+                    mDialogWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+                    mDialogWindow.Owner = Application.Current.MainWindow;
+
                     // Show dialog
                     mDialogWindow.ShowDialog();
                 }

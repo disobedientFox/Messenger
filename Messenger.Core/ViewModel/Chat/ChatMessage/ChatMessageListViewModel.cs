@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace Messenger.Core
@@ -7,13 +9,15 @@ namespace Messenger.Core
     {
         #region Public Properties
 
-        public List<ChatMessageListItemViewModel> Items { get; set; }
+        public ObservableCollection<ChatMessageListItemViewModel> Items { get; set; }
 
         public bool AttachmentMenuVisible { get; set; }
 
         public bool AnyPopupVisible => AttachmentMenuVisible;
 
         public ChatAttachmentPopupMenuViewModel AttachmentMenu { get; set; }
+
+        public string PendingMessageText { get; set; }
 
         #endregion
 
@@ -54,12 +58,23 @@ namespace Messenger.Core
 
         public void Send()
         {
-            IoC.UI.ShowMessage(new MessageBoxDialogViewModel
-             {
-                 Title = "Send message",
-                 Message = "Thank you for writing a nice message :)",
-                 OkText = "OK"
-             });
+            if (PendingMessageText == string.Empty)
+                return;
+
+            if (Items == null)
+                Items = new ObservableCollection<ChatMessageListItemViewModel>();
+
+            Items.Add(new ChatMessageListItemViewModel
+            {
+                Initials = "LM",
+                Message = PendingMessageText,
+                MessageSentTime = DateTime.UtcNow,
+                SentByMe = true,
+                SenderName = "Alia Yarychevskaya",
+                NewItem = true,
+            });
+
+            PendingMessageText = string.Empty;
         }
 
         #endregion

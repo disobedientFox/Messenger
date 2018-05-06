@@ -21,5 +21,7 @@ namespace Messenger.Core
         public bool MessageRead => MessageReadTime > DateTimeOffset.MinValue;
 
         public DateTimeOffset MessageSentTime { get; set; }
+
+        public bool NewItem { get; set; }
     }
 }

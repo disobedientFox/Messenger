@@ -7,7 +7,7 @@
       xmlns:core="clr-namespace:Messenger.Core;assembly=Messenger.Core"          
       mc:Ignorable="d" 
       x:Name="Page"
-      d:DesignHeight="700" d:DesignWidth="1000"
+      d:DesignHeight="500" d:DesignWidth="500"
       Background="Transparent"
       d:DataContext="{x:Static core:ChatMessageListDesignModel.Instance}">
 
@@ -109,7 +109,11 @@
             
             <!-- Message box -->
             <TextBox Grid.Column="1" 
+                     PreviewKeyDown="MessageText_PreviewKeyDown"
+                     x:Name="MessageText"
                      VerticalAlignment="Center"
+                     local:IsFocusedProperty.Value="True"
+                     Text="{Binding PendingMessageText, UpdateSourceTrigger=PropertyChanged}"
                      Tag="Write a message..."
                      FontSize="{StaticResource FontSizeSmall}"
                      FontFamily="{StaticResource LatoRegular}"
@@ -136,6 +140,8 @@
                 <!-- Send button -->
                 <Button Content="Send"
                         Padding="12 4"
+                        IsDefault="True"
+                        Focusable="False"
                         Foreground="{StaticResource BackgroundVeryLightBrush}"
                         FontFamily="{StaticResource LatoRegular}"
                         Background="{StaticResource OrangeRedBrush}"

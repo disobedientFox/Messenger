@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
 namespace Messenger.Core
 {
     public class ChatMessageListDesignModel : ChatMessageListViewModel
@@ -15,7 +17,7 @@ namespace Messenger.Core
 
         public ChatMessageListDesignModel()
         {
-            Items = new List<ChatMessageListItemViewModel>
+            Items = new ObservableCollection<ChatMessageListItemViewModel>
             {
                 new ChatMessageListItemViewModel
                 {

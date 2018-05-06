@@ -47,8 +47,7 @@ namespace Messenger
 
                 // Start off hidden before we decide how to animate
                 // if we are to be animated out initially
-                if (!(bool)value)
-                    element.Visibility = Visibility.Hidden;
+                element.Visibility = Visibility.Hidden;
 
                 // Create a single self-unhookable event 
                 // for the elements Loaded event
@@ -165,6 +164,19 @@ namespace Messenger
         {
             // Animate in
             element.Marquee(firstLoad ? 0 : 3f);
+        }
+    }
+
+    /// <summary>
+    /// Animates a framework element sliding up from the bottom on load
+    /// if the value is true
+    /// </summary>
+    public class AnimateSlideInFromBottomOnLoadProperty : AnimateBaseProperty<AnimateSlideInFromBottomOnLoadProperty>
+    {
+        protected override async void DoAnimation(FrameworkElement element, bool value, bool firstLoad)
+        {
+            // Animate in
+            await element.SlideAndFadeIn(AnimationSlideInDirection.Bottom, !value, !value? 0 : 0.3f, keepMargin: false);
         }
     }
 }
