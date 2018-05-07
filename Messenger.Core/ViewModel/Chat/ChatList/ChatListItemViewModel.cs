@@ -110,6 +110,20 @@ namespace Messenger.Core
                         SenderName = "Parnell",
                         SentByMe = false,
                     },
+
+                    new ChatMessageListItemViewModel
+                    {
+                        Message = "A received message",
+                        ImageAttachment = new ChatMessageListItemImageAttachmentViewModel
+                        {
+                            ThumbnailUrl = "http://anywhere"
+                        },
+                        Initials = Initials,
+                        MessageSentTime = DateTime.UtcNow,
+                        ProfilePictureRGB = "FF0000",
+                        SenderName = "Parnell",
+                        SentByMe = false,
+                    },
                 }
             });
         }
