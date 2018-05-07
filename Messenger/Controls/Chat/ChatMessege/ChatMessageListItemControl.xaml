@@ -33,7 +33,7 @@
 
             <!-- Chat Message container -->
             <Grid Margin="30 0 15 0 " 
-                  HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAligmentConverter}}">
+                  HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAlignmentConverter}}">
 
 
                 <Grid.Triggers>
@@ -67,18 +67,33 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
+                    <!-- Image Loading Glyph -->
+                    <Border HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAlignmentConverter}}"
+                            VerticalAlignment="Top">
+                        <TextBlock Style="{StaticResource SpinningText}"
+                               Foreground="{StaticResource ForegroundLightBrush}"
+                               Padding="20"
+                               DataContext="{Binding ImageAttachment}"
+                               Visibility="{Binding ImageLoaded, Converter={local:BooleanToVisiblityGoneConverter}, ConverterParameter=True, FallbackValue=Collapsed}"
+                               />
+                        
+                    </Border>
+
                     <!-- Image attachment -->
                     <Border CornerRadius="10"
                             Margin="0 0 0 3">
                         <Image DataContext="{Binding ImageAttachment}"
                                local:ClipFromBorderProperty.Value="True"
-                               Source="{Binding LocalFilePath}"
+                               local:FadeInImageOnLoadProperty.Value="True"
+                               Source="{Binding LocalFilePath, NotifyOnTargetUpdated=True}"
                                MaxWidth="400">
                         </Image>
                     </Border>
                                         
                     <!-- Chat message  text bubble-->
                     <Grid Grid.Row="1"
+                          HorizontalAlignment="{Binding SentByMe, 
+                        Converter={local:SentByMeToAlignmentConverter}}"
                           Visibility="{Binding HasMessage, 
                         Converter={local:BooleanToVisiblityGoneConverter}}">
 
@@ -105,7 +120,7 @@
                         <Path Grid.Row="1" 
                               StrokeThickness="0"
                               Margin="15 -1 15 0"
-                              HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAligmentConverter}}"
+                              HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAlignmentConverter}}"
                               Fill="{Binding SentByMe, Converter={local:SentByMeToBackgroundConverter}}"
                               Data="M 0,0  L 11,11 L 22,0"/>
 
@@ -116,7 +131,7 @@
                 <!-- Time conteiners -->
                 <StackPanel Grid.Row="2"
                             Orientation="Horizontal"
-                            HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAligmentConverter}, ConverterParameter=true}"
+                            HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAlignmentConverter}, ConverterParameter=true}"
                             Name="ExtraDetails"
                             Opacity="0">
                     

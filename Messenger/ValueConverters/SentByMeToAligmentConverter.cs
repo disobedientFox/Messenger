@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Messenger
 {
-    public class SentByMeToAligmentConverter : BaseValueConverter<SentByMeToAligmentConverter>
+    public class SentByMeToAlignmentConverter : BaseValueConverter<SentByMeToAlignmentConverter>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
