@@ -13,18 +13,18 @@
 
     <Grid >
         <Grid.RowDefinitions>
-            
+
             <!-- Title bar -->
             <RowDefinition Height="50"/>
-            
+
             <!-- Chat list -->
             <RowDefinition Height="*"/>
-            
+
             <!-- Message send text box -->
             <RowDefinition Height="Auto"/>
-            
+
         </Grid.RowDefinitions>
-        
+
         <!-- Popup Overlay -->
         <Border Background="Transparent"
                 Visibility="{Binding AnyPopupVisible, Converter={local:BooleanToVisibilityConverter}, ConverterParameter=True}"
@@ -34,7 +34,7 @@
             <Border.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding PupopClickawayCommand}"/>
             </Border.InputBindings>
-            
+
         </Border>
 
 
@@ -44,9 +44,9 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            
+
             <!-- Title Text -->
-            <TextBlock Text="Parnell"
+            <TextBlock Text="{Binding DisplayTitle}"
                        Grid.ColumnSpan="2"
                        Foreground="{StaticResource TurquoiseBrush}"
                        FontSize="22"
@@ -56,28 +56,69 @@
 
             <!-- Main button-->
             <StackPanel Orientation ="Horizontal" Grid.Column="1">
-                <Button Style="{StaticResource IconGrowButton}" Content="{StaticResource FontAwesomeSearchIcon}"/>
-                <Button Style="{StaticResource IconGrowButton}" Content="{StaticResource FontAwesomeEllipsisVerticalIcon}"/>
+                <!-- Search Button -->
+                <Button Style="{StaticResource IconGrowButton}" 
+                        Content="{StaticResource FontAwesomeSearchIcon}"
+                        Command="{Binding OpenSearchCommand}"
+                        />
+                <Button Style="{StaticResource IconGrowButton}" 
+                        Content="{StaticResource FontAwesomeEllipsisVerticalIcon}"/>
             </StackPanel>
+
+            <!-- Search Overlay -->
+            <Grid Grid.ColumnSpan="2"
+                  local:AnimateSlideInFromRightMarginProperty.Value="{Binding SearchIsOpen}"
+                  >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Close search button -->
+                <Button Style="{StaticResource IconGrowButton}" 
+                        Content="{StaticResource FontAwesomeCloseIcon}"
+                        Command="{Binding CloseSearchCommand}"
+                        Foreground="{StaticResource OrangeRedBrush}"
+                        />
+
+                <!-- Search box -->
+                <TextBox 
+                    Grid.Column="1" 
+                    Tag="Search text..."
+                    local:FocusProperty.Value="{Binding SearchIsOpen}"
+                    Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                    Margin="0 5 5 5"
+                    FontSize="16"
+                    >
+                    <TextBox.InputBindings>
+                        <!-- Clear text on Esc -->
+                        <KeyBinding Command="{Binding ClearSearchCommand}" Key="Esc" />
+                        <!-- Search on enter -->
+                        <KeyBinding Command="{Binding SearchCommand}" Key="Return" />
+                    </TextBox.InputBindings>
+                </TextBox>
+
+            </Grid>
         </Grid>
-        
+
         <!-- Chat List -->
         <local:ChatMessageListControl 
             x:Name="ChatMessageList" 
             Grid.Row="1" 
             DataContext="{Binding}"/>
-        
+
         <!-- Attachment menu popup -->
         <Border Grid.Row="1"
                 VerticalAlignment="Bottom"
                 Panel.ZIndex="2"
                 HorizontalAlignment="Left"
                 local:AnimateSlideInFromBottomProperty.Value="{Binding AttachmentMenuVisible}">
-            
+
             <local:BubbleContent DataContext="{Binding AttachmentMenu}"/>
-            
+
         </Border>
-        
+
 
         <!-- Message send text box-->
         <Grid Grid.Row="2" 
@@ -87,13 +128,13 @@
               Background="{StaticResource ForegroundLightBrush}">
 
             <Grid.ColumnDefinitions>
-                
+
                 <!-- Attach button -->
                 <ColumnDefinition Width="Auto"/>
-                
+
                 <!-- Text entry box -->
                 <ColumnDefinition Width="*"/>
-                
+
                 <!-- Additional buttons -->
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
@@ -105,8 +146,8 @@
                     VerticalAlignment="Top"
                     Command="{Binding AttachButtonCommand}"
                     Foreground="{StaticResource ForegroundDarkBrush}"/>
-            
-            
+
+
             <!-- Message box -->
             <TextBox Grid.Column="1" 
                      PreviewKeyDown="MessageText_PreviewKeyDown"
@@ -149,7 +190,7 @@
                         Command="{Binding SendCommand}"/>
 
             </StackPanel>
-            
+
         </Grid>
     </Grid>
 </local:BasePage>
