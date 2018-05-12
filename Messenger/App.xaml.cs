@@ -14,6 +14,15 @@ namespace Messenger
 
             ApplicationSetup();
 
+            IoC.Logger.Log("Application starting up", LogLevel.Debug);
+            IoC.Logger.Log("Application starting up", LogLevel.Informative);
+            IoC.Logger.Log("Application starting up", LogLevel.Error);
+            IoC.Logger.Log("Application starting up", LogLevel.Success);
+            IoC.Logger.Log("Application starting up", LogLevel.Warning);
+            IoC.Logger.Log("Application starting up", LogLevel.Success);
+            IoC.Logger.Log("Application starting up", LogLevel.Informative);
+            IoC.Logger.Log("Application starting up", LogLevel.Verbose);
+
             Current.MainWindow = new MainWindow();
             Current.MainWindow.Show();
         }
@@ -26,7 +35,8 @@ namespace Messenger
             IoC.Setup();
 
             IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
-            
+
+            IoC.Kernel.Bind<ILogFactory>().ToConstant(new BaseLogFactory());
         }
     }
 }

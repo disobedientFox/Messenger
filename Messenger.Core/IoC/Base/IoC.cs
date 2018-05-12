@@ -14,6 +14,8 @@ namespace Messenger.Core
         public static IKernel Kernel { get; private set; } = new StandardKernel();
 
         public static IUIManager UI => IoC.Get<IUIManager>();
+        
+        public static ILogFactory Logger => IoC.Get<ILogFactory>();
 
         public static ApplicationViewModel Application => IoC.Get<ApplicationViewModel>();
 
@@ -35,9 +37,7 @@ namespace Messenger.Core
         }
 
         #endregion
-
-
-
+        
         public static T Get<T>()
         {
             return Kernel.Get<T>();
