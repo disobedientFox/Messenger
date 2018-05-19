@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -43,10 +44,10 @@ namespace Messenger.Web.Server.Controllers
                     Value = "Red"
                 });
 
-                var settingsLocally = mContext.Settings.Local.Count();
+                //var settingsLocally = mContext.Settings.Local.Count();
                 //var settingsDatabase = mContext.Settings.Count();
 
-                var firstLocal = mContext.Settings.Local.First();
+                //var firstLocal = mContext.Settings.Local.First();
                 //var firstDatabase = mContext.Settings.First();
 
                 mContext.SaveChanges();
@@ -75,7 +76,7 @@ namespace Messenger.Web.Server.Controllers
         [Route("private")]
         public IActionResult Private()
         {
-            return Content($"Thes is a private area. Welcome {HttpContext.User.Identity.Name}", "text/html");
+            return Content($"This is a private area. Welcome {HttpContext.User.Identity.Name}", "text/html");
         }
 
         [Route("login")]

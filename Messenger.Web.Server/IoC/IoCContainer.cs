@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,7 @@ namespace Messenger.Web.Server
     {
 
         public static ServiceProvider Provider { get; set; }
+
+        public static IConfiguration Configuration { get; set; }
     }
 }
