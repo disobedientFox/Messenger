@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Messenger.Web.Server.Controllers
+namespace Messenger.Web.Server
 {
     public class HomeController : Controller
     {
@@ -44,12 +44,6 @@ namespace Messenger.Web.Server.Controllers
                     Value = "Red"
                 });
 
-                //var settingsLocally = mContext.Settings.Local.Count();
-                //var settingsDatabase = mContext.Settings.Count();
-
-                //var firstLocal = mContext.Settings.Local.First();
-                //var firstDatabase = mContext.Settings.First();
-
                 mContext.SaveChanges();
 
             }
@@ -63,7 +57,9 @@ namespace Messenger.Web.Server.Controllers
             var result = await mUserManager.CreateAsync(new ApplicationUser
             {
                 UserName = "Juliet",
-                Email = "contact@me.com"
+                Email = "contact@me.com",
+                FirstName = "Alia",
+                LastName = "Yarychevskaya"
             }, "password");
 
             if (result.Succeeded)

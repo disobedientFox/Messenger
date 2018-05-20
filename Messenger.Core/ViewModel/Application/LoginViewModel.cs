@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security;
-using System.Text;
+﻿using Dna;
+using System;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 
 namespace Messenger.Core
@@ -44,12 +39,48 @@ namespace Messenger.Core
         {
             await RunCommand(() => this.LoginIsRunning, async () =>
             {
-                await Task.Delay(1000);
 
-                IoC.Settings.Name = new TextEntryViewModel { Label = "Name", OriginalText = $"Alia Yarychevskaya{DateTime.Now.ToLocalTime()}" };
-                IoC.Settings.Username = new TextEntryViewModel { Label = "Username", OriginalText = "Alia" };
+                var result = await WebRequests.PostAsync<ApiResponse<LoginResultApiModel>>(
+                    "http://localhost:56748/api/login",
+                    new LoginCredentialsApiModel
+                    {
+                        UsernameOrEmail = Email,
+                        Password = (parameter as IHavePassword).SecurePassword.Unsecure()
+                    });
+
+                if (result == null || result.ServerResponse == null || !result.ServerResponse.Successful)
+                {
+                    var message = "Unknown error from server call";
+
+                    if (result?.ServerResponse != null)
+                    {
+                        message = result.ServerResponse.ErrorMessage;
+                    }
+                    else if (string.IsNullOrWhiteSpace(result?.RawServerResponse))
+                    {
+                        message = $"Unexpected response from server. {result.RawServerResponse}";
+                    }
+                    else if (result != null)
+                    {
+                        message = $"Falied to communicate with server. Status code{result.StatusCode}. {result.StatusDescription}";
+                    }
+
+                    await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
+                    {
+                        // TODO: Localize strings
+                        Title = "Login Failed",
+                        Message = message
+                    });
+
+                    return;
+                }
+
+                var userData = result.ServerResponse.Response;
+
+                IoC.Settings.Name = new TextEntryViewModel { Label = "Name", OriginalText = $"{userData.FirstName} {userData.LastName}"};
+                IoC.Settings.Username = new TextEntryViewModel { Label = "Username", OriginalText = userData.Username };
                 IoC.Settings.Password = new PasswordEntryViewModel { Label = "Password", FakePassword = "********" };
-                IoC.Settings.Email = new TextEntryViewModel { Label = "Email", OriginalText = "contact@me.com" };
+                IoC.Settings.Email = new TextEntryViewModel { Label = "Email", OriginalText = userData.Email };
 
                 // Go to chat page
                 IoC.Application.GoToPage(ApplicationPage.Chat);

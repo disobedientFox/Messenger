@@ -59,7 +59,8 @@
                        Margin="15 12"
                        VerticalAlignment="Center"
                        FontFamily="{StaticResource LatoRegular}"
-                       FontSize="18"/>
+                       FontSize="18"
+                       Foreground="{StaticResource ForegroundMainBrush}"/>
             
             <!-- Edit Content -->
             <TextBox Text="{Binding EditedText, UpdateSourceTrigger=PropertyChanged}"
@@ -74,6 +75,7 @@
 
             <!-- Content -->
             <TextBlock Text="{Binding OriginalText}"
+                       Foreground="{StaticResource ForegroundDarkBrush}"
                        Grid.Column="1"
                        VerticalAlignment="Center"
                        Margin="15 8"
@@ -113,8 +115,8 @@
                         FontFamily="{StaticResource FontAwesome}"
                         VerticalAlignment="Center"
                         Cursor="Hand"
-                        FontSize="6"
-                        Height="46"
+                        FontSize="4"
+                        Height="45"
                         
                         Padding="4 0"
                         local:AnimateFadeInProperty.Value="{Binding Editing}"
@@ -133,7 +135,7 @@
                         Padding="4 0"
                         Height="45"
                         local:AnimateFadeInProperty.Value="{Binding Editing}"
-                        FontSize="6"/>
+                        FontSize="4"/>
 
 
             </StackPanel>

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Dna;
+using Dna.AspNet;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace Messenger.Web.Server
 {
@@ -17,9 +12,18 @@ namespace Messenger.Web.Server
             BuildWebHost(args).Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-                WebHost.CreateDefaultBuilder()
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            return WebHost.CreateDefaultBuilder()
                 .UseStartup<Startup>()
                 .Build();
+        }
+        /*public static IWebHost BuildWebHost(string[] args) =>
+                .UseDnaFramework(construct =>
+                {
+                    construct.AddFileLogger();
+                })
+                .UseStartup<Startup>()
+                .Build();*/
     }
 }

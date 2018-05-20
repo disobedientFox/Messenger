@@ -1,9 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Messenger.Core;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Messenger.Web.Server
 {
@@ -11,6 +8,10 @@ namespace Messenger.Web.Server
     {
 
         public static ApplicationDbContext ApplicationDbContext => IoCContainer.Provider.GetService<ApplicationDbContext>();
+
+        public static IEmailSender EmailSender => IoCContainer.Provider.GetService<IEmailSender>();
+
+        public static IEmailTemplateSender EmailTemplateSender => IoCContainer.Provider.GetService<IEmailTemplateSender>();
     }
 
     public static class IoCContainer

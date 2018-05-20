@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Messenger.Core;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
@@ -25,6 +26,10 @@ namespace Messenger.Web.Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSendGridEmailSender();
+            
+            services.AddEmailTemplateSender();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(IoCContainer.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -88,8 +93,23 @@ namespace Messenger.Web.Server
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{moreInfo?}");
             });
+
+            /*IoCContainer.Provider.GetService<IEmailTemplateSender>().SendGeneralEmailAsync(new SendEmailDetails
+            {
+                Content = "This is our first HTML email <b>with some bold text</b>",
+                IsHTML = true,
+                FromEmail = "secret@website.com",
+                ToEmail = "w57047@student.wsiz.rzeszow.pl",
+                FromName = "Some girl",
+                ToName = "Alia",
+                Subject = "This is sent from my App"
+            }, "Verify email",
+            "Hi, Alia",
+            "Thanks for creating an account with us.<br/> To continue please verify your email with us.",
+            "Verify email",
+            "http://www.google.com");*/
         }
         
     }

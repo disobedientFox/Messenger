@@ -1,4 +1,6 @@
-﻿using Messenger.Core;
+﻿using Dna;
+using Messenger.Core;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace Messenger
@@ -8,21 +10,22 @@ namespace Messenger
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
+        protected override async void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
-            ApplicationSetup();
+            await ApplicationSetupAsync();
+            
 
-            IoC.Logger.Log("Application starting up", LogLevel.Debug);
-            IoC.Logger.Log("Application starting up", LogLevel.Informative);
-            IoC.Logger.Log("Application starting up", LogLevel.Error);
-            IoC.Logger.Log("Application starting up", LogLevel.Success);
-            IoC.Logger.Log("Application starting up", LogLevel.Warning);
-            IoC.Logger.Log("Application starting up", LogLevel.Success);
-            IoC.Logger.Log("Application starting up", LogLevel.Informative);
-            IoC.Logger.Log("Application starting up", LogLevel.Verbose);
-
+            // Setup the application view model based on if we are logged in
+            /*IoC.Application.GoToPage(
+                // If we are logged in...
+                await IoC.ClientDataStore.HasCredentialsAsync() ?
+                // Go to chat page
+                ApplicationPage.Chat :
+                // Otherwise, go to login page
+                ApplicationPage.Login);*/
+            
             Current.MainWindow = new MainWindow();
             Current.MainWindow.Show();
         }
@@ -37,6 +40,33 @@ namespace Messenger
             IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
 
             IoC.Kernel.Bind<ILogFactory>().ToConstant(new BaseLogFactory());
+        }
+
+        private async Task ApplicationSetupAsync()
+        {
+            // Setup the Dna Framework
+            new DefaultFrameworkConstruction()
+                .AddFileLogger()
+                .Build();
+//.AddClientDataStore()
+            // Setup IoC
+            IoC.Setup();
+
+            IoC.Kernel.Bind<ILogFactory>().ToConstant(new BaseLogFactory());
+            // Bind a UI Manager
+            IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
+
+            //IoC.Kernel.Bind<ITaskManager>().ToConstant(new TaskManager());
+
+            // Bind a file manager
+            //IoC.Kernel.Bind<IFileManager>().ToConstant(new FileManager());
+
+
+            // Ensure the client data store 
+            //await IoC.ClientDataStore.EnsureDataStoreAsync();
+
+            // Load new settings
+            //await IoC.Settings.LoadAsync();
         }
     }
 }

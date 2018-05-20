@@ -9,13 +9,13 @@ namespace Messenger.Core
 {
     public class ApplicationViewModel : BaseViewModel
     {
-        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Chat;
+        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Login;
 
         public BaseViewModel CurrentPageViewModel { get; set; }
 
-        public bool SideMenuVisible { get; set; } = true;
+        public bool SideMenuVisible { get; set; } = false;
 
-        public bool SettingsMenuVisible { get; set; } = false;
+        public bool SettingsMenuVisible { get; set; }
 
         public void GoToPage(ApplicationPage page, BaseViewModel viewModel = null)
         {
