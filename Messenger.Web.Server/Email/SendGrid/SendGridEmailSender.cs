@@ -1,4 +1,5 @@
-﻿using Messenger.Core;
+﻿using Dna;
+using Messenger.Core;
 using Newtonsoft.Json;
 using SendGrid;
 using SendGrid.Helpers.Mail;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using static Dna.FrameworkDI;
 
 namespace Messenger.Web.Server
 {
@@ -15,7 +17,7 @@ namespace Messenger.Web.Server
         public async Task<SendEmailResponse> SendEmailAsync(SendEmailDetails details)
         {
             // Get the SendGrid key
-            var apiKey = IoCContainer.Configuration["SendGridKey"];
+            var apiKey = FrameworkDI.Configuration["SendGridKey"];
 
             // Create a new SendGrid client
             var client = new SendGridClient(apiKey);

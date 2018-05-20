@@ -1,5 +1,6 @@
 ﻿using Messenger.Core;
 using System.Threading.Tasks;
+using static Dna.FrameworkDI;
 
 namespace Messenger.Web.Server
 {
@@ -7,11 +8,11 @@ namespace Messenger.Web.Server
     {
         public static async Task<SendEmailResponse> SendUserVerificationEmailAsync(string displayName, string email, string verificationUrl)
         {
-            return await IoC.EmailTemplateSender.SendGeneralEmailAsync(new SendEmailDetails
+            return await DI.EmailTemplateSender.SendGeneralEmailAsync(new SendEmailDetails
             {
                 IsHTML = true,
-                FromEmail = IoCContainer.Configuration["MessengerSettings:SendEmailFromEmail"],
-                FromName = IoCContainer.Configuration["MessengerSettings:SendEmailFromName"],
+                FromEmail = Configuration["MessengerSettings:SendEmailFromEmail"],
+                FromName = Configuration["MessengerSettings:SendEmailFromName"],
                 ToEmail = email,
                 ToName = displayName,
                 Subject = "Verify Your Email - Messenger"

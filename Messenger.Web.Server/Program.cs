@@ -12,18 +12,21 @@ namespace Messenger.Web.Server
             BuildWebHost(args).Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args)
+        /*public static IWebHost BuildWebHost(string[] args)
         {
             return WebHost.CreateDefaultBuilder()
                 .UseStartup<Startup>()
                 .Build();
-        }
-        /*public static IWebHost BuildWebHost(string[] args) =>
+        }*/
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            return WebHost.CreateDefaultBuilder() 
                 .UseDnaFramework(construct =>
                 {
                     construct.AddFileLogger();
                 })
                 .UseStartup<Startup>()
-                .Build();*/
+                .Build();
+        }
     }
 }

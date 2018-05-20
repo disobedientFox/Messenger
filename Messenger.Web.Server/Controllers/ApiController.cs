@@ -9,6 +9,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using static Dna.FrameworkDI;
 
 namespace Messenger.Web.Server
 {
@@ -80,7 +81,7 @@ namespace Messenger.Web.Server
                         LastName = userIdentity.LastName,
                         Email = userIdentity.Email,
                         Username = userIdentity.UserName,
-                        //Token = userIdentity.GenerateJwtToken()
+                        Token = userIdentity.GenerateJwtToken()
                     }
                 };
             }
@@ -131,13 +132,13 @@ namespace Messenger.Web.Server
 
             // Create the credentials used to generate the token
             var credentials = new SigningCredentials(
-                                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(IoCContainer.Configuration["Jwt:SecretKey"])),
+                                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SecretKey"])),
                                     SecurityAlgorithms.HmacSha256);
 
             // Generate the Jwt Token
             var token = new JwtSecurityToken(
-                            issuer: IoCContainer.Configuration["Jwt:Issuer"],
-                            audience: IoCContainer.Configuration["Jwt:Audience"],
+                            issuer: Configuration["Jwt:Issuer"],
+                            audience: Configuration["Jwt:Audience"],
                             claims: claims,
                             signingCredentials: credentials,
                             expires: DateTime.Now.AddMonths(3)

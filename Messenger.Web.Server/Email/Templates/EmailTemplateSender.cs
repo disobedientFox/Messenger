@@ -31,7 +31,7 @@ namespace Messenger.Web.Server
             details.Content = templateText;
 
             // Send email
-            return await IoC.EmailSender.SendEmailAsync(details);
+            return await DI.EmailSender.SendEmailAsync(details);
         }
     }
 }

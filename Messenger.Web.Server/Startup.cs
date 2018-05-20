@@ -1,4 +1,5 @@
 ﻿using System;
+using Dna;
 using System.Text;
 using Messenger.Core;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Dna.AspNet;
+using static Dna.FrameworkDI;
 
 namespace Messenger.Web.Server
 {
@@ -18,7 +21,6 @@ namespace Messenger.Web.Server
     {
         public Startup(IConfiguration configuration)
         {
-            IoCContainer.Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -31,7 +33,7 @@ namespace Messenger.Web.Server
             services.AddEmailTemplateSender();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(IoCContainer.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Framework.Construction.Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -46,9 +48,9 @@ namespace Messenger.Web.Server
                         ValidateAudience = true,
                         ValidateIssuerSigningKey = true,
                         ValidateLifetime = true,
-                        ValidIssuer = IoCContainer.Configuration["Jwt:Issuer"],
-                        ValidAudience = IoCContainer.Configuration["Jwt:Audience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(IoCContainer.Configuration["Jwt:SecretKey"]))
+                        ValidIssuer = Framework.Construction.Configuration["Jwt:Issuer"],
+                        ValidAudience = Framework.Construction.Configuration["Jwt:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Framework.Construction.Configuration["Jwt:SecretKey"]))
                     };
                 });
 
@@ -73,7 +75,8 @@ namespace Messenger.Web.Server
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
-            IoCContainer.Provider = (ServiceProvider)serviceProvider;
+            app.UseDnaFramework();
+            
 
             app.UseAuthentication();
 

@@ -1,0 +1,1 @@
+[2018-05-20 11:28:47] User profile is available. Using 'C:\Users\Rita\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
