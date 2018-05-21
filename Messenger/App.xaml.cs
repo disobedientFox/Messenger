@@ -1,5 +1,6 @@
 ﻿using Dna;
 using Messenger.Core;
+using Messenger.Relational;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -47,8 +48,8 @@ namespace Messenger
             // Setup the Dna Framework
             new DefaultFrameworkConstruction()
                 .AddFileLogger()
+                .UseClientDataStore()
                 .Build();
-//.AddClientDataStore()
             // Setup IoC
             IoC.Setup();
 
@@ -63,7 +64,7 @@ namespace Messenger
 
 
             // Ensure the client data store 
-            //await IoC.ClientDataStore.EnsureDataStoreAsync();
+            await IoC.ClientDataStore.EnsureDataStoreAsync();
 
             // Load new settings
             //await IoC.Settings.LoadAsync();
