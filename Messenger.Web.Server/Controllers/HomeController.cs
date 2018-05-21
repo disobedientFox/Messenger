@@ -33,7 +33,6 @@ namespace Messenger.Web.Server
 
         public IActionResult Index()
         {
-
             mContext.Database.EnsureCreated();
 
             if (!mContext.Settings.Any())

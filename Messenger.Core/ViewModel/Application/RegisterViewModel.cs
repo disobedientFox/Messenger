@@ -1,5 +1,11 @@
-﻿using Dna;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security;
+using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Messenger.Core
@@ -10,7 +16,6 @@ namespace Messenger.Core
         #region Public Properties
 
         public string Email { get; set; }
-        public string Username { get; set; }
 
         public bool RegisterIsRunning { get; set; }
 
@@ -39,27 +44,7 @@ namespace Messenger.Core
         {
             await RunCommand(() => this.RegisterIsRunning, async () =>
             {
-                // Call the server and attempt to register with the provided credentials
-                // TODO: Move all URLs and API routes to static class in core
-                var result = await WebRequests.PostAsync<ApiResponse<RegisterResultApiModel>>(
-                    "http://localhost:56748/api/register",
-                    new RegisterCredentialsApiModel
-                    {
-                        Username = Username,
-                        Email = Email,
-                        Password = (parameter as IHavePassword).SecurePassword.Unsecure()
-                    });
-
-                // If the response has an error...
-                //if (await result.DisplayErrorIfFailedAsync("Register Failed"))
-                    //return;
-
-                // OK successfully registered (and logged in)... now get users data
-                var loginResult = result.ServerResponse.Response;
-
-                // Let the application view model handle what happens
-                // with the successful login
-                await IoC.Application.HandleSuccessfulLoginAsync(loginResult);
+                await Task.Delay(5000);
             });
         }
 

@@ -1,5 +1,9 @@
-﻿using Dna;
-using Ninject;
+﻿using Ninject;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Messenger.Core
 {
@@ -16,8 +20,6 @@ namespace Messenger.Core
         public static ApplicationViewModel Application => IoC.Get<ApplicationViewModel>();
 
         public static SettingsViewModel Settings => IoC.Get<SettingsViewModel>();
-
-        public static IClientDataStore ClientDataStore => Framework.Service<IClientDataStore>();
 
         #endregion
 
