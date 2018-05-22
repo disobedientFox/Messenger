@@ -1,5 +1,4 @@
 ﻿using Dna;
-using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -67,7 +66,6 @@ namespace Messenger.Core
 
                     await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
                     {
-                        // TODO: Localize strings
                         Title = "Login Failed",
                         Message = message
                     });

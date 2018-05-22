@@ -1,1 +1,136 @@
 [2018-05-20 11:28:47] User profile is available. Using 'C:\Users\Rita\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2018-05-21 09:48:46] User profile is available. Using 'C:\Users\Rita\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2018-05-21 09:49:07] Request starting HTTP/1.1 GET http://localhost:56748/  
+[2018-05-21 09:49:10] Executing action method Messenger.Web.Server.HomeController.Index (Messenger.Web.Server) with arguments ((null)) - ModelState is Valid
+[2018-05-21 09:49:12] Entity Framework Core 2.0.3-rtm-10026 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[2018-05-21 09:49:14] Executed DbCommand (301ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+[2018-05-21 09:49:15] Executed DbCommand (102ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+[2018-05-21 09:49:27] Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+[2018-05-21 09:49:30] Executed action Messenger.Web.Server.HomeController.Index (Messenger.Web.Server) in 20721.0116ms
+[2018-05-21 09:49:30] Request finished in 22895.35ms 200 text/html; charset=utf-8
+[2018-05-21 09:49:41] Request starting HTTP/1.1 GET http://localhost:56748/api/login  
+[2018-05-21 09:49:41] Executing HttpStatusCodeResult, setting HTTP status code 415
+[2018-05-21 09:49:41] Executed action Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) in 142.6697ms
+[2018-05-21 09:49:41] Request finished in 478.5911ms 415 
+[2018-05-21 09:50:37] Request starting HTTP/1.1 GET http://localhost:56748/  
+[2018-05-21 09:50:37] Executing action method Messenger.Web.Server.HomeController.Index (Messenger.Web.Server) with arguments ((null)) - ModelState is Valid
+[2018-05-21 09:50:37] Entity Framework Core 2.0.3-rtm-10026 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[2018-05-21 09:50:38] Executed DbCommand (155ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+[2018-05-21 09:50:38] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+[2018-05-21 09:50:38] Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+[2018-05-21 09:50:38] Executed action Messenger.Web.Server.HomeController.Index (Messenger.Web.Server) in 394.8617ms
+[2018-05-21 09:50:38] Request finished in 518.22ms 200 text/html; charset=utf-8
+[2018-05-21 09:51:25] Request starting HTTP/1.1 POST http://localhost:56748/api/login application/json 50
+[2018-05-21 09:51:26] Executing action method Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) with arguments (Messenger.Core.LoginCredentialsApiModel) - ModelState is Valid
+[2018-05-21 09:51:26] Entity Framework Core 2.0.3-rtm-10026 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[2018-05-21 09:51:28] Executed DbCommand (918ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+[2018-05-21 09:51:29] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+[2018-05-21 09:51:29] Executed action Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) in 4033.0667ms
+[2018-05-21 09:51:29] Request finished in 4073.1293ms 200 application/json; charset=utf-8
+[2018-05-21 09:58:04] User profile is available. Using 'C:\Users\Rita\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2018-05-21 09:58:18] Request starting HTTP/1.1 GET http://localhost:56748/  
+[2018-05-21 09:58:21] Executing action method Messenger.Web.Server.HomeController.Index (Messenger.Web.Server) with arguments ((null)) - ModelState is Valid
+[2018-05-21 09:58:24] Entity Framework Core 2.0.3-rtm-10026 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[2018-05-21 09:58:26] Executed DbCommand (192ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+[2018-05-21 09:58:28] Executed DbCommand (812ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+[2018-05-22 12:31:22] User profile is available. Using 'C:\Users\Rita\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2018-05-22 12:31:48] Request starting HTTP/1.1 GET http://localhost:56748/  
+[2018-05-22 12:31:50] Executing action method Messenger.Web.Server.HomeController.Index (Messenger.Web.Server) with arguments ((null)) - ModelState is Valid
+[2018-05-22 12:31:52] Entity Framework Core 2.0.3-rtm-10026 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[2018-05-22 12:31:57] Executed DbCommand (820ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+[2018-05-22 12:31:59] Executed DbCommand (624ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+[2018-05-22 12:32:19] Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+[2018-05-22 12:32:24] Executed action Messenger.Web.Server.HomeController.Index (Messenger.Web.Server) in 34096.2371ms
+[2018-05-22 12:32:24] Request finished in 35832.4933ms 200 text/html; charset=utf-8
+[2018-05-22 12:32:52] Request starting HTTP/1.1 POST http://localhost:56748/api/login application/json 50
+[2018-05-22 12:32:53] Executing action method Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) with arguments (Messenger.Core.LoginCredentialsApiModel) - ModelState is Valid
+[2018-05-22 12:32:53] Entity Framework Core 2.0.3-rtm-10026 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[2018-05-22 12:32:54] Executed DbCommand (340ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+[2018-05-22 12:32:55] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+[2018-05-22 12:32:55] Executed action Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) in 2404.1338ms
+[2018-05-22 12:32:55] Request finished in 2836.3683ms 200 application/json; charset=utf-8
+[2018-05-22 12:33:29] Request starting HTTP/1.1 POST http://localhost:56748/api/login application/json 50
+[2018-05-22 12:33:29] Executing action method Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) with arguments (Messenger.Core.LoginCredentialsApiModel) - ModelState is Valid
+[2018-05-22 12:33:29] Entity Framework Core 2.0.3-rtm-10026 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[2018-05-22 12:33:29] Executed DbCommand (30ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+[2018-05-22 12:33:29] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+[2018-05-22 12:33:29] Executed action Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) in 285.5598ms
+[2018-05-22 12:33:29] Request finished in 335.9205ms 200 application/json; charset=utf-8
+[2018-05-22 01:07:58] User profile is available. Using 'C:\Users\Rita\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2018-05-22 01:08:12] Request starting HTTP/1.1 GET http://localhost:56748/  
+[2018-05-22 01:08:14] Executing action method Messenger.Web.Server.HomeController.Index (Messenger.Web.Server) with arguments ((null)) - ModelState is Valid
+[2018-05-22 01:08:16] Entity Framework Core 2.0.3-rtm-10026 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[2018-05-22 01:08:18] Executed DbCommand (660ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+[2018-05-22 01:08:19] Executed DbCommand (40ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+[2018-05-22 01:08:32] Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+[2018-05-22 01:08:35] Executed action Messenger.Web.Server.HomeController.Index (Messenger.Web.Server) in 21501.4317ms
+[2018-05-22 01:08:35] Request finished in 23382.3267ms 200 text/html; charset=utf-8
+[2018-05-22 01:09:01] Request starting HTTP/1.1 POST http://localhost:56748/api/login application/json 50
+[2018-05-22 01:09:01] Executing action method Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) with arguments (Messenger.Core.LoginCredentialsApiModel) - ModelState is Valid
+[2018-05-22 01:09:01] Entity Framework Core 2.0.3-rtm-10026 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[2018-05-22 01:09:03] Executed DbCommand (786ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+[2018-05-22 01:09:03] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+[2018-05-22 01:09:03] Executed action Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) in 2336.7027ms
+[2018-05-22 01:09:03] Request finished in 2527.1629ms 200 application/json; charset=utf-8
+[2018-05-22 01:10:05] Request starting HTTP/1.1 POST http://localhost:56748/api/login application/json 38
+[2018-05-22 01:10:05] Executing action method Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) with arguments (Messenger.Core.LoginCredentialsApiModel) - ModelState is Valid
+[2018-05-22 01:10:05] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+[2018-05-22 01:10:05] Executed action Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) in 111.6253ms
+[2018-05-22 01:10:05] Request finished in 144.9722ms 200 application/json; charset=utf-8
+[2018-05-22 01:10:28] Request starting HTTP/1.1 POST http://localhost:56748/api/login application/json 50
+[2018-05-22 01:10:28] Executing action method Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) with arguments (Messenger.Core.LoginCredentialsApiModel) - ModelState is Valid
+[2018-05-22 01:10:28] Entity Framework Core 2.0.3-rtm-10026 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+[2018-05-22 01:10:28] Executed DbCommand (8ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+[2018-05-22 01:10:28] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+[2018-05-22 01:10:28] Executed action Messenger.Web.Server.ApiController.LogIn (Messenger.Web.Server) in 189.7126ms
+[2018-05-22 01:10:28] Request finished in 225.3126ms 200 application/json; charset=utf-8

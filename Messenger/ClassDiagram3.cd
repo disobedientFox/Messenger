@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Messenger.FrameworkElementAnimations" Collapsed="true">
+    <Position X="52.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAgCAAAAABAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animation\FrameworkElementAnimations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.PageAnimations" Collapsed="true">
+    <Position X="49.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animation\PageAnimations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.StoryboardHelpers" Collapsed="true">
+    <Position X="52.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAIAAAAAAAABABIAAAAAAAACBAAAAABAAAAAAIQAQ=</HashCode>
+      <FileName>Animation\StoryboardHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.App" Collapsed="true">
+    <Position X="47.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.BaseAttachedProperty&lt;Parent, Property&gt;" Collapsed="true">
+    <Position X="23.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAQAAgAAAAAQAAAAAEAEBAFAQAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\BaseAttachedProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ClipFromBorderProperty" Collapsed="true">
+    <Position X="38.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAgAAAAAAACAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\BorderAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.IsBusyProperty" Collapsed="true">
+    <Position X="42.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\ButtonAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AnimateBaseProperty&lt;Parent&gt;" Collapsed="true">
+    <Position X="11.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAEBAAIAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\FrameworkElementAnimationAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AnimateSlideInFromLeftProperty" Collapsed="true">
+    <Position X="4.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\FrameworkElementAnimationAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AnimateSlideInFromBottomProperty" Collapsed="true">
+    <Position X="6.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\FrameworkElementAnimationAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AnimateSlideInFromRightProperty" Collapsed="true">
+    <Position X="9" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\FrameworkElementAnimationAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AnimateSlideInFromRightMarginProperty" Collapsed="true">
+    <Position X="11.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\FrameworkElementAnimationAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AnimateSlideInFromBottomMarginProperty" Collapsed="true">
+    <Position X="13.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\FrameworkElementAnimationAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AnimateFadeInProperty" Collapsed="true">
+    <Position X="15.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\FrameworkElementAnimationAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AnimateMarqueeProperty" Collapsed="true">
+    <Position X="18" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\FrameworkElementAnimationAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AnimateSlideInFromBottomOnLoadProperty" Collapsed="true">
+    <Position X="20.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\FrameworkElementAnimationAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.FadeInImageOnLoadProperty" Collapsed="true">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAACAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\FrameworkElementAnimationAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.NoFrameHistory" Collapsed="true">
+    <Position X="24.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\NoFrameHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.PanelChildMarginProperty" Collapsed="true">
+    <Position X="27" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\PanelChildMarginProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.MonitorPasswordProperty" Collapsed="true">
+    <Position X="29.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\PasswordBoxAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.HasTextProperty" Collapsed="true">
+    <Position X="31.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\PasswordBoxAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ScrollToBottomOnLoadProperty" Collapsed="true">
+    <Position X="33.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\ScrollViewerAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AutoScrollToBottomProperty" Collapsed="true">
+    <Position X="36" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\ScrollViewerAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.IsFocusedProperty" Collapsed="true">
+    <Position X="40.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\TextAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.FocusProperty" Collapsed="true">
+    <Position X="45" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\TextAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.FocusAndSelectProperty" Collapsed="true">
+    <Position X="22.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>AttachedProperties\TextAttachedProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.BubbleContent" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="51" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\BubbleContent.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ChatListControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="52.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Chat\ChatList\ChatListControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ChatListItemControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="54.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Chat\ChatList\ChatListItemControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ChatMessageListControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="47.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Chat\ChatMessege\ChatMessageListControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ChatMessageListItemControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="49.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Chat\ChatMessege\ChatMessageListItemControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.PasswordEntryControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="52.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAIAAAACAAAAAYAAAAAAAAAAAAE=</HashCode>
+      <FileName>Controls\Input\PasswordEntryControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.TextEntryControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="54.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAACAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Input\TextEntryControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.VerticalMenu" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="49.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Menu\VerticalMenu.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.PageHost" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="51" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAEAAAAEAAAAgI=</HashCode>
+      <FileName>Controls\PageHost.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.SettingsControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="49.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\SettingsControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.SideMenuControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="51" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\SideMenuControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.BaseDialogUserControl" Collapsed="true">
+    <Position X="8.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAABEgAAAAAAEEAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Dialogs\BaseDialogUserControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.DialogMessageBox" Collapsed="true">
+    <Position X="8.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dialogs\DialogMessageBox.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Messenger.DialogWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="51" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>DialogWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.UIManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="47.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IoC\UIManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="54.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAACAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.BasePage" Collapsed="true">
+    <Position X="2.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAgAAAIAAAAAAACABAAAAAAAAEARAAAAACA=</HashCode>
+      <FileName>Pages\BasePage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.BasePage&lt;VM&gt;" Collapsed="true">
+    <Position X="2.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\BasePage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ChatPage" Collapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ChatPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Messenger.LoginPage" Collapsed="true">
+    <Position X="2.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\LoginPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Messenger.RegisterPage" Collapsed="true">
+    <Position X="5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\RegisterPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Messenger.ApplicationPageHelpers" Collapsed="true">
+    <Position X="49.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\ApplicationPageHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.BaseValueConverter&lt;T&gt;" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAQIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\BaseValueConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Messenger.BooleanInvertConverter" Collapsed="true">
+    <Position X="15" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\BooleanInvertConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.BooleanToVisibilityConverter" Collapsed="true">
+    <Position X="19.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\BooleanToVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.BooleanToVisiblityGoneConverter" Collapsed="true">
+    <Position X="24" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\BooleanToVisiblityGoneConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.HorizontalAlignmentConverter" Collapsed="true">
+    <Position X="1.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\HorizontalAlignmentConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.IconTypeToFontAwesomeConverter" Collapsed="true">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\IconTypeToFontAwesomeConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.MenuItemTypeToVisibilityConverter" Collapsed="true">
+    <Position X="6" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\MenuItemTypeToVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.PopupContentConverter" Collapsed="true">
+    <Position X="8.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\PopupContentConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.SentByMeToAlignmentConverter" Collapsed="true">
+    <Position X="10.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\SentByMeToAligmentConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.SentByMeToBackgroundConverter" Collapsed="true">
+    <Position X="12.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\SentByMeToBackgroundConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.StringRGBToBrushConverter" Collapsed="true">
+    <Position X="17.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\StringRGBToBrushConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.TimeToDisplayTimeConverter" Collapsed="true">
+    <Position X="21.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\TimeToDisplayTimeConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.TimeToReadTimeConverter" Collapsed="true">
+    <Position X="26.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueConverters\TimeToReadTimeConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.DialogWindowViewModel" Collapsed="true">
+    <Position X="8.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\DialogWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ViewModelLocator" Collapsed="true">
+    <Position X="51" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAABAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModelLocator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.WindowViewModel" Collapsed="true">
+    <Position X="8.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwEACAEAFAgIBAAAgAEAQEEAAAIACAIAgIABAAAEAAQ=</HashCode>
+      <FileName>ViewModels\WindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.WindowResizer" Collapsed="true">
+    <Position X="52.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAIQEAAAAQAACAIBAIEAEAAIACAAAACAIAAAAAAA=</HashCode>
+      <FileName>Window\WindowResizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.MONITORINFO" Collapsed="true">
+    <Position X="47.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAACAAAA=</HashCode>
+      <FileName>Window\WindowResizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.Properties.Resources" Collapsed="true">
+    <Position X="54.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.Properties.Settings" Collapsed="true">
+    <Position X="47.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Messenger.Rectangle" Collapsed="true">
+    <Position X="51" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACACAAAAAAAA=</HashCode>
+      <FileName>Window\WindowResizer.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Messenger.MINMAXINFO" Collapsed="true">
+    <Position X="47.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQBAAAAAAACAAAIAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Window\WindowResizer.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Messenger.POINT" Collapsed="true">
+    <Position X="49.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Window\WindowResizer.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Messenger.AnimationSlideInDirection" Collapsed="true">
+    <Position X="47.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACACAAAAAAAA=</HashCode>
+      <FileName>Animation\AnimationSlideInDirection.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Messenger.PageAnimation" Collapsed="true">
+    <Position X="51" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Animation\PageAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Messenger.WindowDockPosition" Collapsed="true">
+    <Position X="52.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAACACAAAAAAAA=</HashCode>
+      <FileName>Window\WindowResizer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Messenger.MonitorOptions" Collapsed="true">
+    <Position X="49.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAQAAAAAAAA=</HashCode>
+      <FileName>Window\WindowResizer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

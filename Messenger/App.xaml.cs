@@ -52,9 +52,9 @@ namespace Messenger
             // Setup IoC
             IoC.Setup();
 
-            IoC.Kernel.Bind<ILogFactory>().ToConstant(new BaseLogFactory());
+            //IoC.Kernel.Bind<ILogFactory>().ToConstant(new BaseLogFactory());
             // Bind a UI Manager
-            IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
+            //IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
 
             //IoC.Kernel.Bind<ITaskManager>().ToConstant(new TaskManager());
 

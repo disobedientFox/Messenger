@@ -38,6 +38,7 @@ namespace Messenger.Core
 
         public void OpenMessage()
         {
+            /*
             if(Name == "Jesse")
             {
                 IoC.Application.GoToPage(ApplicationPage.Login, new LoginViewModel
@@ -45,7 +46,7 @@ namespace Messenger.Core
                     Email = "jesse@email.com"
                 });
                 return;
-            }
+            }*/
 
             IoC.Application.GoToPage(ApplicationPage.Chat, new ChatMessageListViewModel
             {

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Messenger.Core;
 using System.Windows;
@@ -14,8 +13,6 @@ namespace Messenger
         /// <summary>
         /// Displays a single message box to the user
         /// </summary>
-        /// <param name="viewModel">The view model</param>
-        /// <returns></returns>
         public Task ShowMessage(MessageBoxDialogViewModel viewModel)
         {
             return new DialogMessageBox().ShowDialog(viewModel);

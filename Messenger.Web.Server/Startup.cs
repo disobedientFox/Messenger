@@ -99,7 +99,8 @@ namespace Messenger.Web.Server
                     template: "{controller=Home}/{action=Index}/{moreInfo?}");
             });
 
-            /*IoCContainer.Provider.GetService<IEmailTemplateSender>().SendGeneralEmailAsync(new SendEmailDetails
+            //IoCContainer.Provider.GetService<IEmailTemplateSender>().SendGeneralEmailAsync(new SendEmailDetails
+            DI.EmailTemplateSender.SendGeneralEmailAsync(new SendEmailDetails
             {
                 Content = "This is our first HTML email <b>with some bold text</b>",
                 IsHTML = true,
@@ -112,7 +113,7 @@ namespace Messenger.Web.Server
             "Hi, Alia",
             "Thanks for creating an account with us.<br/> To continue please verify your email with us.",
             "Verify email",
-            "http://www.google.com");*/
+            "http://www.google.com");
         }
         
     }

@@ -11,7 +11,6 @@ namespace Messenger.Core
     /// </summary>
     public interface IUIManager
     {
-
         Task ShowMessage(MessageBoxDialogViewModel viewModel);
 
     }
